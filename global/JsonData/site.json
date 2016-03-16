@@ -5,26 +5,16 @@
 			"place":"Zenith",
 			"city":"Paris",
 			"country":"France",
-			"billeterie":"www.fnac.com",
-			"price":"10€/15€",
-			"googlemapdata":{
-				"x":100,
-				"y":100
-			}
+			"billeterie":"http://www.fnac.com"
+			
 		},
 		"2":{
 			"datetime":"26-04-2016 19:30",
 			"place":"Zenith",
 			"city":"Lille",
 			"country":"France",
-			"billeterie":"www.fnac.com",
-			"price":"10€/15€",
-			"googlemapdata":{
-				"x":200,
-				"y":200
-			}
-		},
-
+			"billeterie":"http://www.fnac.com"			
+		}
 
 	},
 	"contact":{
