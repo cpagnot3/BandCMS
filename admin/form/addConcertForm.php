@@ -7,20 +7,29 @@
 </head>
 	
 <body>
+
 	<?php 
 		if(isset($_GET['t'])){
 			echo '<div>Show added !</div>';
 		}
+
+		if(isset($_GET['id'])){
+			$id = $_GET['id'];
+			require(dirname(__FILE__).'/../../Global/Repository/ConcertRepository.php');
+			$concertRepository = new ConcertRepository();
+			$concert = $concertRepository->getConcertById($id);
+		}
 	?>
 	<form method="post" action="../controller/addConcertController.php">
 		<input style="visibility:hidden;display:none;" type="text" name="redirect" value= <?php echo '"http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'"'?> >
+		<?php echo (isset($_GET['id']))? '<input style="visibility:hidden;display:none;" type="text" name="id" value="'.$id.'">': ''; ?>
 		<table>
 			<tr>
 				<td>
 					<label>Date : </label>
 				</td>			
 				<td>
-					<input type="text" name="dateConcert" id="datetimepicker"/>
+					<input type="text" value=<?php echo (isset($_GET['id']))? $concert->getDateConcert() : '';  ?> name="dateConcert" id="datetimepicker"/>
 				</td>		
 			</tr>
 			<tr>	
@@ -28,7 +37,7 @@
 					<label>Place : </label>
 				</td>		
 				<td>
-					<input type="text" name="place">
+					<input type="text" value=<?php echo (isset($_GET['id']))? $concert->getPlace() : '';  ?> name="place">
 				</td>		
 			</tr>
 			<tr>
@@ -36,7 +45,7 @@
 					<label>City : </label>
 				</td>		
 				<td>
-					<input type="text" name="city">
+					<input type="text" value=<?php echo (isset($_GET['id']))? $concert->getCity() : '';  ?> name="city">
 				</td>		
 			</tr>
 			<tr>				
@@ -44,10 +53,10 @@
 					<label>Country : </label>
 				</td>		
 				<td>
-					<select name="country">
-						<option>France</option>
-						<option>Germany</option>
-						<option>United Kingdom</option>
+					<select name="country" id="country"> 						
+						<option value="Germany">Germany</option>
+						<option value="United Kingdom">United Kingdom</option>
+						<option value="France">France</option>
 					</select>
 				</td>		
 			</tr>
@@ -56,7 +65,7 @@
 					<label>Ticket link : </label>
 				</td>
 				<td>		
-					<input type="text" name="billeterie">
+					<input type="text" value=<?php echo (isset($_GET['id']))? $concert->getBilleterie() : ''; ?> name="billeterie">
 				</td>
 			</tr>
 			<tr>
@@ -64,7 +73,7 @@
 					
 				</td>
 				<td>		
-					<input type="submit" value="Add">
+					<input type="submit" name="action" value=<?php echo (isset($_GET['id']))? 'Edit' : 'Add' ;?>>
 				</td>
 			</tr>
 		</table>
@@ -72,6 +81,7 @@
 
 	</form>
 	<script type="text/javascript">
+		<?php echo (isset($_GET['id']))? '$("#country").val("'.$concert->getCountry().'");' : '';  ?>
 		$('#datetimepicker').datetimepicker({
 			format : 'd-m-Y H:i'
 		});

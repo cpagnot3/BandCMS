@@ -13,8 +13,9 @@ class ConcertRepository
 	{
 		$data = $this->getJson();
 		$listConcert = array();
-		foreach($data->concert as $concert){
+		foreach($data->concert as $key => $concert){
 			$show = new Concert();	
+			$show->setId($key);
 			$show->setDateConcert($concert->datetime);
 			$show->setPlace($concert->place);
 			$show->setCity($concert->city);
@@ -78,6 +79,31 @@ class ConcertRepository
 		$newJson = $this->setJson($data);
 		return $newJson;		
 		
+	}
+
+	public function editConcert($id,$show)
+	{
+		$data = $this->getJson();
+
+		$show = array(
+				'datetime' 	=> $show->getDateConcert(),
+				'place'		=> $show->getPlace(),
+				'city'		=> $show->getCity(),
+				'country'	=> $show->getCountry(),
+				'billeterie'=> $show->getBilleterie()
+				);
+			
+		$data->concert->$id = $show;			
+		$newJson = $this->setJson($data);
+		return $newJson;		
+	}
+
+	public function deleteConcert($id)
+	{
+		$data = $this->getJson();
+			unset($data->concert->$id);
+		$newJson = $this->setJson($data);
+		return $newJson;		
 	}
 	
 }

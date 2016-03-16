@@ -30,6 +30,13 @@ class Concert {
 		return $this->id;
 	}
 
+	//getId
+	public function setId($id)
+	{
+		$this->id = $id;
+		return $this;
+	}
+
 	//getDateConcert
 	public function getDateConcert()
 	{
