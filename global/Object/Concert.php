@@ -1,24 +1,19 @@
 <?php 
 
 
-class Concert {
+class Concert 
+{
 
-	//Integer ref="Concert.id_concert"
 	private $id;
 
-	//Datetime ref="Concert.date_concert"
 	private $dateConcert;
 
-	//String ref="Concert.place"
 	private $place;
 
-	//String ref="Concert.city"
 	private $city;
 
-	//String ref="Concert.country"
 	private $country;
 
-	//String ref="Concert.billeterie"
 	private $billeterie;
 
 
