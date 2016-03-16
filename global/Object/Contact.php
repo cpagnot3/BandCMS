@@ -13,7 +13,7 @@ class Contact
 
 	private $twLink;
 
-	private $ytLien;
+	private $ytLink;
 
 	//getMail
 	public function getMail()
@@ -29,26 +29,26 @@ class Contact
 	}
 
 	//getName
-	public function setName()
+	public function getName()
 	{
 		return $this->name;
 	}
 
 	//setName
-	public function getName($name)
+	public function setName($name)
 	{
 		$this->name = $name;
 		return $this;
 	}
 
 	//getFirstName
-	public function setFirstName()
+	public function getFirstName()
 	{
 		return $this->firstName;
 	}
 
 	//setFirstName
-	public function getFirstName($firtName)
+	public function setFirstName($firstName)
 	{
 		$this->firstName = $firstName;
 		return $this;
@@ -81,7 +81,7 @@ class Contact
 	}
 
 	//setYtLink
-	public function getYtLink($ytLink)
+	public function getYtLink()
 	{
 		return $this->ytLink;
 	}
