@@ -46,6 +46,39 @@ class ConcertRepository
 		$data = json_decode($json);
 		return $data;
 	}
+
+	private function setJson($newJsonString)
+	{
+		$newJsonString = json_encode($newJsonString);
+		$data = file_put_contents(dirname(__FILE__).'/../JsonData/site.json', $newJsonString);			
+		return $data;
+	}
+
+	
+
+	public function addConcert($show)
+	{
+		//get last id
+		$data = $this->getJson();
+		$concertList = $data->concert;
+		foreach ($concertList as $key => $value) {
+			$lastConcertId = $key;
+		}
+		$concertID = $lastConcertId + 1;
+
+		$show = array(
+				'datetime' 	=> $show->getDateConcert(),
+				'place'		=> $show->getPlace(),
+				'city'		=> $show->getCity(),
+				'country'	=> $show->getCountry(),
+				'billeterie'=> $show->getBilleterie()
+				);
+			
+		$data->concert->$concertID = $show;			
+		$newJson = $this->setJson($data);
+		return $newJson;		
+		
+	}
 	
 }
 
