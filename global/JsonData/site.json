@@ -30,19 +30,19 @@
       "bandcamp":"bandcamp.com\/TheBand"
    },
    "news":{
-   		"1":{
-   			"title":"Le titre",
-   			"date":"21/03/2016",
-   			"chapo":"Le chapo",
-   			"image":"url/images.png",
-   			"texte":"Lorem ipsum"
-   		},
-   		"2":{
-   			"title":"Le titre",
-   			"date":"21/03/2016",
-   			"chapo":"le chapo",
-   			"image":"url/images.png",
-   			"texte":"Lorem ipsum"
-   		},
+		"1":{
+			"title":"Le titre 1",
+			"date":"21/03/2016",
+			"chapo":"Le chapo",
+			"image":"url/images.png",
+			"texte":"Lorem ipsum"
+		},
+		"2":{
+			"title":"Le titre 2",
+			"date":"21/03/2016",
+			"chapo":"le chapo",
+			"image":"url/images.png",
+			"texte":"Lorem ipsum"
+		}
    }
 }

@@ -47,7 +47,7 @@ class News {
 	//getDate
 	public function getDate()
 	{
-		return $this->title;
+		return $this->date;
 	}
 
 	//setDate
