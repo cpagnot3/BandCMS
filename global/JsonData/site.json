@@ -1,1 +1,48 @@
-{"concert":{"1":{"datetime":"08-04-2016 03:00","place":"Zenith","city":"Toulouse","country":"France","billeterie":"http:\/\/www.fnac.com"},"2":{"datetime":"26-04-2016 19:30","place":"Zenith","city":"Lille","country":"France","billeterie":"http:\/\/www.fnac.com"}},"contact":{"mail":"clementpagnot@gmail.com","name":"Pagnot","firstname":"Cl\u00e9ment","fblink":"facebook.com\/Cl\u00e9ment","twlink":"twitter.com\/Pagnot","ytlink":"youtube.com\/CP"},"media":{},"merchandising":{"bandcamp":"bandcamp.com\/TheBand"}}
+{
+   "concert":{
+      "1":{
+         "datetime":"08-04-2016 03:00",
+         "place":"Zenith",
+         "city":"Toulouse",
+         "country":"France",
+         "billeterie":"http:\/\/www.fnac.com"
+      },
+      "2":{
+         "datetime":"26-04-2016 19:30",
+         "place":"Zenith",
+         "city":"Lille",
+         "country":"France",
+         "billeterie":"http:\/\/www.fnac.com"
+      }
+   },
+   "contact":{
+      "mail":"clementpagnot@gmail.com",
+      "name":"Pagnot",
+      "firstname":"Cl\u00e9ment",
+      "fblink":"facebook.com\/Cl\u00e9ment",
+      "twlink":"twitter.com\/Pagnot",
+      "ytlink":"youtube.com\/CP"
+   },
+   "media":{
+
+   },
+   "merchandising":{
+      "bandcamp":"bandcamp.com\/TheBand"
+   },
+   "news":{
+   		"1":{
+   			"title":"Le titre",
+   			"date":"21/03/2016",
+   			"chapo":"Le chapo",
+   			"image":"url/images.png",
+   			"texte":"Lorem ipsum"
+   		},
+   		"2":{
+   			"title":"Le titre",
+   			"date":"21/03/2016",
+   			"chapo":"le chapo",
+   			"image":"url/images.png",
+   			"texte":"Lorem ipsum"
+   		},
+   }
+}
