@@ -7,6 +7,7 @@
 	$releaseDate= $_POST['release-date'];
 	$file		= $_POST['file'];
 	$action 	= $_POST['action'];
+	$redirect 	= $_POST['redirect'];
 
 	$show = new Music();
 	$show->setTitle($title);
@@ -17,7 +18,7 @@
 	if($action=='Add'){
 		try{			
 			$newShow = $musicRepository->addMusic($show);
-			//header('Location: '.$redirect.'?a'); 
+			header('Location: '.$redirect.'?a'); 
 		}catch(Exception $e){
 			echo 'ERROR : '.$e;
 		}
