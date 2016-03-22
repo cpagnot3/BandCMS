@@ -29,7 +29,7 @@
 					<label>Date : </label>
 				</td>			
 				<td>
-					<input type="text" value=<?php echo (isset($_GET['id']))? $concert->getDateConcert() : '';  ?> name="dateConcert" id="datetimepicker"/>
+					<input type="text" name="dateConcert" value=<?php echo (isset($_GET['id']))? '"'.$concert->getDateConcert().'"' : '""';  ?>  id="datetimepicker"/>
 				</td>		
 			</tr>
 			<tr>	
@@ -37,7 +37,7 @@
 					<label>Place : </label>
 				</td>		
 				<td>
-					<input type="text" value=<?php echo (isset($_GET['id']))? $concert->getPlace() : '';  ?> name="place">
+					<input type="text" name="place" value=<?php echo (isset($_GET['id']))? '"'.$concert->getPlace().'"' : '""';  ?> >
 				</td>		
 			</tr>
 			<tr>
@@ -45,7 +45,7 @@
 					<label>City : </label>
 				</td>		
 				<td>
-					<input type="text" value=<?php echo (isset($_GET['id']))? $concert->getCity() : '';  ?> name="city">
+					<input type="text"  id="city" name="city" value=<?php echo (isset($_GET['id']))? '"'.$concert->getCity().'"' : '""';  ?>>
 				</td>		
 			</tr>
 			<tr>				
@@ -65,7 +65,7 @@
 					<label>Ticket link : </label>
 				</td>
 				<td>		
-					<input type="text" value=<?php echo (isset($_GET['id']))? $concert->getBilleterie() : ''; ?> name="billeterie">
+					<input type="text"  name="billeterie" value=<?php echo (isset($_GET['id']))? '"'.$concert->getBilleterie().'"' : '""'; ?>>
 				</td>
 			</tr>
 			<tr>
@@ -77,6 +77,8 @@
 				</td>
 			</tr>
 		</table>
+		<input style="visibility:hidden;display:none;" type="text" name="lat" id="lat">
+		<input style="visibility:hidden;display:none;" type="text" name="long" id="long">
 
 
 	</form>
@@ -84,7 +86,20 @@
 		<?php echo (isset($_GET['id']))? '$("#country").val("'.$concert->getCountry().'");' : '';  ?>
 		$('#datetimepicker').datetimepicker({
 			format : 'd-m-Y H:i'
-		});
+		});			
+	$('#city').change(function(){
+		var city = $(this).val();
+		city = city.replace(" ", "+");
+		url = "https://maps.googleapis.com/maps/api/geocode/json?address="+city+"&key=AIzaSyB14nxFsuqDXgA_4s1kFlefkDO4CcFWxM8";
+    $.get(url, function(data){ 
+    	$('#lat').val(data.results[0].geometry.location.lat); 
+    	$('#long').val(data.results[0].geometry.location.lng);       
+
+    });
+	})	
+    
+
+
 	</script>
 </body>
 

@@ -1,8 +1,9 @@
 <?php 
 
 require(dirname(__FILE__).'/../Object/news.php');
+require(dirname(__FILE__).'/./DataManager.php');
 
-class NewsRepository
+class NewsRepository extends DataManager
 {
 	public function __construct()
 	{

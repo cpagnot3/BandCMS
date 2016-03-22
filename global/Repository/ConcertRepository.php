@@ -1,8 +1,9 @@
 <?php
 
 require(dirname(__FILE__).'/../Object/Concert.php');
+require(dirname(__FILE__).'/./DataManager.php');
 
-class ConcertRepository
+class ConcertRepository extends DataManager
 {
 	public function __construct()
 	{
@@ -21,6 +22,8 @@ class ConcertRepository
 			$show->setCity($concert->city);
 			$show->setCountry($concert->country);
 			$show->setBilleterie($concert->billeterie);
+			$show->setLong($concert->long);
+			$show->setLat($concert->lat);
 			$listConcert[] = $show;
 		}			
 		return $listConcert;
@@ -36,25 +39,12 @@ class ConcertRepository
 		$show->setCity($concert->city);
 		$show->setCountry($concert->country);
 		$show->setBilleterie($concert->billeterie);
+		$show->setLong($concert->long);
+		$show->setLat($concert->lat);
 
 		return $show;
 
 	}
-
-	private function getJson()
-	{
-		$json = file_get_contents(dirname(__FILE__).'/../JsonData/site.json');		
-		$data = json_decode($json);
-		return $data;
-	}
-
-	private function setJson($newJsonString)
-	{
-		$newJsonString = json_encode($newJsonString);
-		$data = file_put_contents(dirname(__FILE__).'/../JsonData/site.json', $newJsonString);			
-		return $data;
-	}
-
 	
 
 	public function addConcert($show)
@@ -72,7 +62,9 @@ class ConcertRepository
 				'place'		=> $show->getPlace(),
 				'city'		=> $show->getCity(),
 				'country'	=> $show->getCountry(),
-				'billeterie'=> $show->getBilleterie()
+				'billeterie'=> $show->getBilleterie(),
+				'lat'		=> $show->getLat(),
+				'long'		=> $show->getLong()
 				);
 			
 		$data->concert->$concertID = $show;			
@@ -90,7 +82,9 @@ class ConcertRepository
 				'place'		=> $show->getPlace(),
 				'city'		=> $show->getCity(),
 				'country'	=> $show->getCountry(),
-				'billeterie'=> $show->getBilleterie()
+				'billeterie'=> $show->getBilleterie(),
+				'lat'		=> $show->getLat(),
+				'long'		=> $show->getLong()
 				);
 			
 		$data->concert->$id = $show;			
