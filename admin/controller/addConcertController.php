@@ -23,7 +23,7 @@
 	if($action=='Add'){
 		try{			
 			$newShow = $ConcertRepository->addConcert($show);
-			header('Location: '.$redirect.'?t'); 
+			header('Location: '.$redirect.'?t');
 		}catch(Exception $e){
 			echo 'ERROR : '.$e;
 		}

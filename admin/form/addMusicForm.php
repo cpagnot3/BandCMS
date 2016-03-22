@@ -3,7 +3,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script src="/BandCMS/admin/assets/js/jquery.datetimepicker.full.js"></script>
 	<script src="/BandCMS/admin/assets/js/jquery.datetimepicker.js"></script>
-
 </head>
 	
 <body>
@@ -29,7 +28,7 @@
 					<label>Title : </label>
 				</td>			
 				<td>
-					<input type="text" name="title" value=<?php echo (isset($_GET['id']))? $music->getTitle() : '';  ?> />
+					<input type="text" name="title" value=<?php echo (isset($_GET['id']))? $music->getTitle() : '';  ?> >
 				</td>		
 			</tr>
 			<tr>	
@@ -37,7 +36,7 @@
 					<label>Artist : </label>
 				</td>		
 				<td>
-					<input type="text" name="artist" value=<?php echo (isset($_GET['id']))? $music->getArtist() : '';  ?> />
+					<input type="text" name="artist" value=<?php echo (isset($_GET['id']))? $music->getArtist() : '';  ?> >
 				</td>		
 			</tr>
 			<tr>
@@ -45,7 +44,7 @@
 					<label>Album : </label>
 				</td>		
 				<td>
-					<input type="text" name="album" value=<?php echo (isset($_GET['id']))? $music->getAlbum() : '';  ?> />
+					<input type="text" name="album" value=<?php echo (isset($_GET['id']))? $music->getAlbum() : '';  ?> >
 				</td>		
 			</tr>
 			<tr>
@@ -53,7 +52,7 @@
 					<label>Release date : </label>
 				</td>		
 				<td>
-					<input type="text" name="release-date" value=<?php echo (isset($_GET['id']))? $music->getReleaseDate() : '';  ?> />
+					<input type="text" name="release-date" value=<?php echo (isset($_GET['id']))? '"'.$music->getReleaseDate().'"' : '""';  ?> id="datetimepicker" >
 				</td>		
 			</tr>
 
@@ -76,11 +75,25 @@
 
 
 	</form>
+
 	<script type="text/javascript">
 		<?php echo (isset($_GET['id']))? '$("#country").val("'.$concert->getCountry().'");' : '';  ?>
 		$('#datetimepicker').datetimepicker({
 			format : 'd-m-Y H:i'
-		});
+		});			
+	$('#city').change(function(){
+		var city = $(this).val();
+		city = city.replace(" ", "+");
+		url = "https://maps.googleapis.com/maps/api/geocode/json?address="+city+"&key=AIzaSyB14nxFsuqDXgA_4s1kFlefkDO4CcFWxM8";
+    $.get(url, function(data){ 
+    	$('#lat').val(data.results[0].geometry.location.lat); 
+    	$('#long').val(data.results[0].geometry.location.lng);       
+
+    });
+	})	
+    
+
+
 	</script>
 </body>
 
