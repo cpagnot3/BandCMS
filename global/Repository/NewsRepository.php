@@ -10,20 +10,6 @@ class NewsRepository extends DataManager
 		# code...
 	}	
 
-	private function getJson()
-	{
-		$json = file_get_contents(dirname(__FILE__).'/../JsonData/site.json');		
-		$data = json_decode($json);
-		return $data;
-	}
-
-	private function setJson($newJsonString)
-	{
-		$newJsonString = json_encode($newJsonString);
-		$data = file_put_contents(dirname(__FILE__).'/../JsonData/site.json', $newJsonString);			
-		return $data;
-	}
-
 	public function addNews($news){
 		//get last id 
 		$data = $this->getJson();
@@ -96,6 +82,21 @@ class NewsRepository extends DataManager
 		unset($data->news->$id);
 		$newJson = $this->setJson($data);
 		return $newJson;		
+	}
+
+	public function editNews($id,$news)
+	{
+		$data = $this->getJson();
+		$news = array(
+			'title' => $news->getTitle(),
+			'date'	=> $news->getDate(),
+			'chapo' => $news->getChapo(),
+			'image' => $news->getImage(),
+			'texte'	=> $news->getTexte()
+		);
+		$data->news->$id = $news;			
+		$newJson = $this->setJson($data);
+		return $newJson;	
 	}
 }
 

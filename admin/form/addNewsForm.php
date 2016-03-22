@@ -5,15 +5,28 @@
 	<script src="/BandCMS/admin/assets/js/jquery-te-1.4.0.min.js"></script>
 </head>
 <body>
+	<?php 
+			if(isset($_GET['t'])){
+				echo '<div>News added !</div>';
+			}
+
+			if(isset($_GET['id'])){
+				$id = $_GET['id'];
+				require(dirname(__FILE__).'/../../Global/Repository/NewsRepository.php');
+				$newsRepository = new NewsRepository();
+				$news= $newsRepository->getNewsById($id);
+			}
+		?>
 	<form method="post" action="../controller/addNewsController.php">
 		<input style="visibility:hidden;display:none;" type="text" name="redirect" value= <?php echo '"http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'"'?> />
+		<?php echo (isset($_GET['id']))? '<input style="visibility:hidden;display:none;" type="text" name="id" value="'.$id.'">': ''; ?>
 		<table>
 			<tr>
 				<td>
 					<label>Title : </label>
 				</td>			
 				<td>
-					<input type="text" name="title"/>
+					<input type="text" name="title" value=<?php echo (isset($_GET['id']))? '"'.$news->getTitle().'"' : '""';  ?> />
 				</td>		
 			</tr>
 			<tr>
@@ -21,7 +34,7 @@
 					<label>Chapo : </label>
 				</td>			
 				<td>
-					<input type="chapo" name="chapo"/>
+					<input type="chapo" name="chapo" value=<?php echo (isset($_GET['id']))? '"'.$news->getChapo().'"' : '""';  ?>/>
 				</td>		
 			</tr>
 			<tr>	
@@ -29,7 +42,7 @@
 				Contenu :
 				</td>	
 				<td>
-					<textarea class="editor" name="text1"></textarea>
+					<textarea class="editor" name="text1"><?php echo (isset($_GET['id']))? $news->getTexte() : '';  ?></textarea>
 				</td>	
 			</tr>
 			<tr>
@@ -37,15 +50,17 @@
 					Image :
 				</td>
 				<td>
-					<input type="file" name="fileToUpload" id="fileToUpload">
+					<input type="file" name="fileToUpload" id="fileToUpload" value=<?php echo (isset($_GET['id']))? '"'.$news->getImage().'"' : '""';  ?>>
+					<?php echo (isset($_GET['id']))? '<img src="'.$news->getChapo().'">' : '';  ?>
 				</td>
+
 			</tr>
 			<tr>
 				<td>
 					
 				</td>
 				<td>
-					<input type="submit" value="Add">
+					<input type="submit" name="action" value=<?php echo (isset($_GET['id']))? 'Edit' : 'Add' ;?>>
 				</td>	
 			</tr>
 		</table>

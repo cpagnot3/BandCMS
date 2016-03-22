@@ -7,6 +7,7 @@
 	$date  = new DateTime();	
 	$date  = $date->format('d/m/Y H:i');
 	$redirect = $_POST['redirect'];
+	$action 	= $_POST['action'];
 
 	$news = new News();
 	$news->setTitle($title);
@@ -15,7 +16,22 @@
 	$news->setImage('o');
 	$news->setTexte($texte);
 	$newsRepository = new NewsRepository();
-	$newNews = $newsRepository->addNews($news);
-	header('Location: '.$redirect.'?id='.$newNews); 
+	if($action=='Add'){
+		try{			
+			$newNews = $newsRepository->addNews($news);
+			header('Location: '.$redirect.'?t'); 
+		}catch(Exception $e){
+			echo 'ERROR : '.$e;
+		}
+	}elseif ($action=='Edit'){
+		try{			
+			$id=$_POST['id'];
+			$editNews = $newsRepository->editNews($id,$news);
+			header('Location: ../form/addNewsForm.php?m');  
+		}catch(Exception $e){
+			echo 'ERROR : '.$e;
+		}
+	}
+	
 	
 ?>

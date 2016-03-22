@@ -28,7 +28,7 @@
 					  	<p>'.$news->getDate().'</p>					  	
 					  	<p>'.$news->getChapo().'</p>
 					  	<img src="'.$news->getImage().'">
-					    <div class="contenu>'.$news->getTexte().'
+					    <div class="contenu">'.$news->getTexte().'
 					    </div>
 					</article>	  
 			';
