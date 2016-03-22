@@ -29,7 +29,7 @@
 					<label>Date : </label>
 				</td>			
 				<td>
-					<input type="text" value=<?php echo (isset($_GET['id']))? $concert->getDateConcert() : '';  ?> name="dateConcert" id="datetimepicker"/>
+					<input type="text" name="dateConcert" value=<?php echo (isset($_GET['id']))? '"'.$concert->getDateConcert().'"' : '""';  ?>  id="datetimepicker"/>
 				</td>		
 			</tr>
 			<tr>	
@@ -37,7 +37,7 @@
 					<label>Place : </label>
 				</td>		
 				<td>
-					<input type="text" value=<?php echo (isset($_GET['id']))? $concert->getPlace() : '';  ?> name="place">
+					<input type="text" name="place" value=<?php echo (isset($_GET['id']))? '"'.$concert->getPlace().'"' : '""';  ?> >
 				</td>		
 			</tr>
 			<tr>
@@ -45,7 +45,7 @@
 					<label>City : </label>
 				</td>		
 				<td>
-					<input type="text" value=<?php echo (isset($_GET['id']))? $concert->getCity() : '';  ?> name="city">
+					<input type="text"  name="city" value=<?php echo (isset($_GET['id']))? '"'.$concert->getCity().'"' : '""';  ?>>
 				</td>		
 			</tr>
 			<tr>				
@@ -65,7 +65,7 @@
 					<label>Ticket link : </label>
 				</td>
 				<td>		
-					<input type="text" value=<?php echo (isset($_GET['id']))? $concert->getBilleterie() : ''; ?> name="billeterie">
+					<input type="text"  name="billeterie" value=<?php echo (isset($_GET['id']))? '"'.$concert->getBilleterie().'"' : '""'; ?>>
 				</td>
 			</tr>
 			<tr>
