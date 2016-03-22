@@ -9,6 +9,12 @@
 	$action 	= $_POST['action'];
 	$redirect 	= $_POST['redirect'];
 
+	// check empty file input
+	if(($_FILES['file']['size'] == 0 && $_FILES['file']['error'] == 0)) {
+		return "no file";
+		exit();
+	}
+
 	$uploaddir = '/../../Global/Files/music/';
 	$uploadfile = $uploaddir . basename($_FILES['file']['name']);
 
@@ -36,7 +42,7 @@
 		try{			
 			$id=$_POST['id'];
 			$editShow = $musicRepository->editMusic($id, $show);
-			header('Location: ../form/editConcertForm.php'); 
+			header('Location: ../form/addMusicForm.php'); 
 		}catch(Exception $e){
 			echo 'ERROR : '.$e;
 		}
