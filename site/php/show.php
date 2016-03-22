@@ -30,9 +30,16 @@
         <?php
         foreach ($concertRepository->getListConcert() as $concert){
 	        echo '
-        var marqueur = new google.maps.Marker({
+        var c'.$concert->getId().' = new google.maps.Marker({
 		position: new google.maps.LatLng('.$concert->getLat().','.$concert->getLong().'),
-		map: map});';
+		map: map,});
+		c'.$concert->getId().'.info = new google.maps.InfoWindow({
+  			content: "<b>'.$concert->getDateConcert().'</b><br/><p>'.$concert->getPlace().'</p> "
+		});
+
+		google.maps.event.addListener(c'.$concert->getId().', "click", function() {
+		  c'.$concert->getId().'.info.open(map, c'.$concert->getId().');
+		});';
 			}
        ?>
       }
