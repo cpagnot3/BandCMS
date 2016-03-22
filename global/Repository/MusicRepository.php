@@ -55,53 +55,51 @@ class MusicRepository
 
 	
 
-	public function addConcert($show)
+	public function addMusic($show)
 	{
 		//get last id
 		$data = $this->getJson();
-		$concertList = $data->concert;
-		foreach ($concertList as $key => $value) {
-			$lastConcertId = $key;
+		$musicList = $data->music;
+		foreach ($musicList as $key => $value) {
+			$lastMusicId = $key;
 		}
-		$concertID = $lastConcertId + 1;
+		$musicID = $lastMusicId + 1;
 
 		$show = array(
-				'datetime' 	=> $show->getDateConcert(),
-				'place'		=> $show->getPlace(),
-				'city'		=> $show->getCity(),
-				'country'	=> $show->getCountry(),
-				'billeterie'=> $show->getBilleterie()
+				'title' 		=> $show->getTitle(),
+				'artist'		=> $show->getArtist(),
+				'album'			=> $show->getAlbum(),
+				'releaseDate'	=> $show->getReleaseDate()
 				);
 			
-		$data->concert->$concertID = $show;			
+		$data->music->$musicID = $show;			
 		$newJson = $this->setJson($data);
-		return $newJson;		
+		return $newJson;
 		
 	}
 
-	public function editConcert($id,$show)
+	public function editMusic($id, $show)
 	{
 		$data = $this->getJson();
 
 		$show = array(
-				'datetime' 	=> $show->getDateConcert(),
-				'place'		=> $show->getPlace(),
-				'city'		=> $show->getCity(),
-				'country'	=> $show->getCountry(),
-				'billeterie'=> $show->getBilleterie()
+				'title' 		=> $show->getTitle(),
+				'artist'		=> $show->getArtist(),
+				'album'			=> $show->getAlbum(),
+				'releaseDate'	=> $show->getReleaseDate()
 				);
 			
-		$data->concert->$id = $show;			
+		$data->music->$id = $show;			
 		$newJson = $this->setJson($data);
-		return $newJson;		
+		return $newJson;	
 	}
 
 	public function deleteConcert($id)
 	{
 		$data = $this->getJson();
-			unset($data->concert->$id);
+			unset($data->music->$id);
 		$newJson = $this->setJson($data);
-		return $newJson;		
+		return $newJson;
 	}
 	
 }

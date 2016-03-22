@@ -65,7 +65,7 @@ class Music {
 	}
 
 	//getAlbum
-	public function getAlbum()){
+	public function getAlbum(){
 		return $this->album;
 	}
 

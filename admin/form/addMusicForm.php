@@ -29,7 +29,7 @@
 					<label>Title : </label>
 				</td>			
 				<td>
-					<input type="text" value=<?php echo (isset($_GET['id']))? $concert->getDateConcert() : '';  ?> name="title" id="datetimepicker"/>
+					<input type="text" name="title" value=<?php echo (isset($_GET['id']))? $music->getTitle() : '';  ?> />
 				</td>		
 			</tr>
 			<tr>	
@@ -37,7 +37,7 @@
 					<label>Artist : </label>
 				</td>		
 				<td>
-					<input type="text" value=<?php echo (isset($_GET['id']))? $concert->getPlace() : '';  ?> name="artist">
+					<input type="text" name="artist" value=<?php echo (isset($_GET['id']))? $music->getArtist() : '';  ?> />
 				</td>		
 			</tr>
 			<tr>
@@ -45,7 +45,7 @@
 					<label>Album : </label>
 				</td>		
 				<td>
-					<input type="text" value=<?php echo (isset($_GET['id']))? $concert->getCity() : '';  ?> name="album">
+					<input type="text" name="album" value=<?php echo (isset($_GET['id']))? $music->getAlbum() : '';  ?> />
 				</td>		
 			</tr>
 			<tr>
@@ -53,7 +53,7 @@
 					<label>Release date : </label>
 				</td>		
 				<td>
-					<input type="text" value=<?php echo (isset($_GET['id']))? $concert->getCity() : '';  ?> name="release-date">
+					<input type="text" name="release-date" value=<?php echo (isset($_GET['id']))? $music->getReleaseDate() : '';  ?> />
 				</td>		
 			</tr>
 
@@ -62,7 +62,7 @@
 					<label>File : </label>
 				</td>		
 				<td>
-					<input type="text" value=<?php echo (isset($_GET['id']))? $concert->getCity() : '';  ?> name="file">
+					<input type="text" value="" name="file">
 				</td>		
 			</tr>
 		
