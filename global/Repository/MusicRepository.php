@@ -1,8 +1,9 @@
 <?php
 
 require(dirname(__FILE__).'/../Object/Music.php');
+require(dirname(__FILE__).'/./DataManager.php');
 
-class MusicRepository
+class MusicRepository extends DataManager
 {
 	public function __construct()
 	{
@@ -38,22 +39,6 @@ class MusicRepository
 		return $show;
 
 	}
-
-	private function getJson()
-	{
-		$json = file_get_contents(dirname(__FILE__).'/../JsonData/site.json');		
-		$data = json_decode($json);
-		return $data;
-	}
-
-	private function setJson($newJsonString)
-	{
-		$newJsonString = json_encode($newJsonString);
-		$data = file_put_contents(dirname(__FILE__).'/../JsonData/site.json', $newJsonString);			
-		return $data;
-	}
-
-	
 
 	public function addMusic($show)
 	{
@@ -96,7 +81,7 @@ class MusicRepository
 		return $newJson;	
 	}
 
-	public function deleteConcert($id)
+	public function deleteMusic($id)
 	{
 		$data = $this->getJson();
 			unset($data->music->$id);

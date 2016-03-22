@@ -15,24 +15,27 @@
 	$show = new Music();
 	$show->setTitle($title);
 	$show->setArtist($artist);
-	$show->setAlbum($album);
+	$show->setAlbum($album);                           
 	$show->setReleaseDate($releaseDate);
 	//file path and upload
 	$show->setPath($uploadfile);
+	$writable = is_writable($uploadfile);
 	move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile);
 
 	$musicRepository = new MusicRepository();
 	if($action=='Add'){
 		try{			
 			$newShow = $musicRepository->addMusic($show);
-			header('Location: '.$redirect.'?a'); 
+			echo "writable dir ?";
+			var_dump($writable);
+			//header('Location: '.$redirect.'?a'); 
 		}catch(Exception $e){
 			echo 'ERROR : '.$e;
 		}
 	}elseif ($action=='Edit'){
 		try{			
 			$id=$_POST['id'];
-			$editShow = $musicRepository->editMusic($id,$show);
+			$editShow = $musicRepository->editMusic($id, $show);
 			header('Location: ../form/editConcertForm.php'); 
 		}catch(Exception $e){
 			echo 'ERROR : '.$e;
