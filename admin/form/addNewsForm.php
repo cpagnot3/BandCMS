@@ -3,6 +3,8 @@
 	<link rel="stylesheet" type="text/css" href="/BandCMS/admin/assets/css/jquery-te-1.4.0.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script src="/BandCMS/admin/assets/js/jquery-te-1.4.0.min.js"></script>
+	<script src="/BandCMS/admin/assets/js/verify.notify.min.js"></script>
+	<script type="text/javascript"></script>
 </head>
 <body>
 	<?php 
@@ -26,7 +28,7 @@
 					<label>Title : </label>
 				</td>			
 				<td>
-					<input type="text" name="title" value=<?php echo (isset($_GET['id']))? '"'.$news->getTitle().'"' : '""';  ?> />
+					<input type="text" data-validate="required" name="title" value=<?php echo (isset($_GET['id']))? '"'.$news->getTitle().'"' : '""';  ?> />
 				</td>		
 			</tr>
 			<tr>
@@ -34,7 +36,7 @@
 					<label>Chapo : </label>
 				</td>			
 				<td>
-					<input type="chapo" name="chapo" value=<?php echo (isset($_GET['id']))? '"'.$news->getChapo().'"' : '""';  ?>/>
+					<input type="chapo" data-validate="required" name="chapo" value=<?php echo (isset($_GET['id']))? '"'.$news->getChapo().'"' : '""';  ?>/>
 				</td>		
 			</tr>
 			<tr>	
@@ -42,7 +44,7 @@
 				Contenu :
 				</td>	
 				<td>
-					<textarea class="editor" name="text1"><?php echo (isset($_GET['id']))? $news->getTexte() : '';  ?></textarea>
+					<textarea class="editor" data-validate="required" name="text1"><?php echo (isset($_GET['id']))? $news->getTexte() : '';  ?></textarea>
 				</td>	
 			</tr>
 			<tr>
