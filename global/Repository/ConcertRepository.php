@@ -22,6 +22,8 @@ class ConcertRepository extends DataManager
 			$show->setCity($concert->city);
 			$show->setCountry($concert->country);
 			$show->setBilleterie($concert->billeterie);
+			$show->setLong($concert->long);
+			$show->setLat($concert->lat);
 			$listConcert[] = $show;
 		}			
 		return $listConcert;
@@ -37,6 +39,8 @@ class ConcertRepository extends DataManager
 		$show->setCity($concert->city);
 		$show->setCountry($concert->country);
 		$show->setBilleterie($concert->billeterie);
+		$show->setLong($concert->long);
+		$show->setLat($concert->lat);
 
 		return $show;
 
@@ -58,7 +62,9 @@ class ConcertRepository extends DataManager
 				'place'		=> $show->getPlace(),
 				'city'		=> $show->getCity(),
 				'country'	=> $show->getCountry(),
-				'billeterie'=> $show->getBilleterie()
+				'billeterie'=> $show->getBilleterie(),
+				'lat'		=> $show->getLat(),
+				'long'		=> $show->getLong()
 				);
 			
 		$data->concert->$concertID = $show;			
@@ -76,7 +82,9 @@ class ConcertRepository extends DataManager
 				'place'		=> $show->getPlace(),
 				'city'		=> $show->getCity(),
 				'country'	=> $show->getCountry(),
-				'billeterie'=> $show->getBilleterie()
+				'billeterie'=> $show->getBilleterie(),
+				'lat'		=> $show->getLat(),
+				'long'		=> $show->getLong()
 				);
 			
 		$data->concert->$id = $show;			
