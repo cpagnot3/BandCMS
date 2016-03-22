@@ -42,7 +42,7 @@ class NewsRepository
 
 		$data->news->$newsId = $news;			
 		$newJson = $this->setJson($data);
-		return $newJson;
+		return $newsId;
 	}
 
 	public function getNewsById($id)

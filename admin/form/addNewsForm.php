@@ -21,7 +21,7 @@
 					<label>Chapo : </label>
 				</td>			
 				<td>
-					<input type="chapo" name="title"/>
+					<input type="chapo" name="chapo"/>
 				</td>		
 			</tr>
 			<tr>	
@@ -49,9 +49,6 @@
 				</td>	
 			</tr>
 		</table>
-	</form>
-
-
 	</form>
 	<script type="text/javascript">
 		$("textarea").jqte();
