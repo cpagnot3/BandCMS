@@ -69,7 +69,8 @@ class MusicRepository
 				'title' 		=> $show->getTitle(),
 				'artist'		=> $show->getArtist(),
 				'album'			=> $show->getAlbum(),
-				'releaseDate'	=> $show->getReleaseDate()
+				'releaseDate'	=> $show->getReleaseDate(),
+				'path'			=> $show->getPath()
 				);
 			
 		$data->music->$musicID = $show;			
@@ -86,7 +87,8 @@ class MusicRepository
 				'title' 		=> $show->getTitle(),
 				'artist'		=> $show->getArtist(),
 				'album'			=> $show->getAlbum(),
-				'releaseDate'	=> $show->getReleaseDate()
+				'releaseDate'	=> $show->getReleaseDate(),
+				'path'			=> $show->getPath()
 				);
 			
 		$data->music->$id = $show;			
