@@ -16,6 +16,10 @@ class Concert
 
 	private $billeterie;
 
+	private $longitude;
+
+	private $latitude;
+
 
 	//Getter/Setter
 
@@ -94,6 +98,32 @@ class Concert
 	public function setBilleterie($billeterie)
 	{
 		$this->billeterie = $billeterie;
+		return $this;
+	}
+
+	//getLongitude
+	public function getLong()
+	{
+		return $this->longitude;
+	}
+
+	//setLongitude
+	public function setLong($longitude)
+	{
+		$this->longitude = $longitude;
+		return $this;
+	}
+
+	//getLatitude
+	public function getLat()
+	{
+		return $this->latitude;
+	}
+
+	//setLatitude
+	public function setLat($latitude)
+	{
+		$this->latitude = $latitude;
 		return $this;
 	}
 

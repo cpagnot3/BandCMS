@@ -7,6 +7,8 @@
 	$city		= $_POST['city'];
 	$country	= $_POST['country'];
 	$billeterie = $_POST['billeterie'];
+	$long		= $_POST['long'];
+	$lat 		= $_POST['lat'];
 	$action 	= $_POST['action'];
 
 	$show = new Concert();
@@ -15,11 +17,13 @@
 	$show->setCity($city);
 	$show->setCountry($country);
 	$show->setBilleterie($billeterie);
+	$show->setLat($lat);
+	$show->setLong($long);
 	$ConcertRepository = new ConcertRepository();
 	if($action=='Add'){
 		try{			
 			$newShow = $ConcertRepository->addConcert($show);
-			header('Location: '.$redirect.'?a'); 
+			header('Location: '.$redirect.'?t'); 
 		}catch(Exception $e){
 			echo 'ERROR : '.$e;
 		}
