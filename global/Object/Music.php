@@ -10,10 +10,15 @@ class Music {
 
 	private $album;
 
+	// added automaticlly
 	private $length;
 
+	private $releaseDate;
+
+	// added automaticlly
 	private $path;
 
+	// added automaticlly
 	private $date;
 
 	//Getter/Setter
@@ -80,6 +85,18 @@ class Music {
 	public function setLength($length)
 	{
 		$this->length = $length;
+		return $this;
+	}
+
+	//getReleaseDate
+	public function getReleaseDate(){
+		return $this->releaseDate;
+	}
+
+	//setReleaseDate
+	public function setReleaseDate($releaseDate)
+	{
+		$this->releaseDate = $releaseDate;
 		return $this;
 	}
 
