@@ -71,7 +71,14 @@
       }
    },
    "login":{
-      "pseudo":"root",
-      "password":""
+      "1":{
+         "pseudo":"root",
+         "password":""
+      },
+      "2":{
+         "pseudo":"root2",
+         "password":""
+      }
+      
    }
 }
