@@ -10,17 +10,17 @@
 
 	<?php 
 		if(isset($_GET['t'])){
-			echo '<div>Show added !</div>';
+			echo '<div>Music added !</div>';
 		}
 
 		if(isset($_GET['id'])){
 			$id = $_GET['id'];
-			require(dirname(__FILE__).'/../../Global/Repository/ConcertRepository.php');
-			$concertRepository = new ConcertRepository();
-			$concert = $concertRepository->getConcertById($id);
+			require(dirname(__FILE__).'/../../Global/Repository/MusicRepository.php');
+			$musicRepository = new MusicRepository();
+			$music = $MusicRepository->getMusicById($id);
 		}
 	?>
-	<form method="post" action="../controller/addConcertController.php">
+	<form method="post" action="../controller/addMusicController.php">
 		<input style="visibility:hidden;display:none;" type="text" name="redirect" value= <?php echo '"http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'"'?> >
 		<?php echo (isset($_GET['id']))? '<input style="visibility:hidden;display:none;" type="text" name="id" value="'.$id.'">': ''; ?>
 		<table>
@@ -29,7 +29,7 @@
 					<label>Title : </label>
 				</td>			
 				<td>
-					<input type="text" value=<?php echo (isset($_GET['id']))? $concert->getDateConcert() : '';  ?> name="dateConcert" id="datetimepicker"/>
+					<input type="text" value=<?php echo (isset($_GET['id']))? $concert->getDateConcert() : '';  ?> name="title" id="datetimepicker"/>
 				</td>		
 			</tr>
 			<tr>	
@@ -37,7 +37,7 @@
 					<label>Artist : </label>
 				</td>		
 				<td>
-					<input type="text" value=<?php echo (isset($_GET['id']))? $concert->getPlace() : '';  ?> name="place">
+					<input type="text" value=<?php echo (isset($_GET['id']))? $concert->getPlace() : '';  ?> name="artist">
 				</td>		
 			</tr>
 			<tr>
@@ -45,7 +45,7 @@
 					<label>Album : </label>
 				</td>		
 				<td>
-					<input type="text" value=<?php echo (isset($_GET['id']))? $concert->getCity() : '';  ?> name="city">
+					<input type="text" value=<?php echo (isset($_GET['id']))? $concert->getCity() : '';  ?> name="album">
 				</td>		
 			</tr>
 			<tr>
@@ -62,7 +62,7 @@
 					<label>File : </label>
 				</td>		
 				<td>
-					<input type="text" value=<?php echo (isset($_GET['id']))? $concert->getCity() : '';  ?> name="release-date">
+					<input type="text" value=<?php echo (isset($_GET['id']))? $concert->getCity() : '';  ?> name="file">
 				</td>		
 			</tr>
 		
