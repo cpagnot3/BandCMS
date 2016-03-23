@@ -28,7 +28,8 @@ class UserRepository extends DataManager
 		try {
 			$user = array(	
 				'pseudo' => $newUser->getPseudo(),
-				'password' => $newUser->getPassword()
+				'password' => $newUser->getPassword(),
+				'superuser' => $newUser->getSuperUser()
 				);
 			$data->user->$userId = $user;			
 			$newJson = $this->setUserJson($data);
@@ -62,7 +63,8 @@ class UserRepository extends DataManager
 				try {
 					$data->user->$id = array(
 						'pseudo' => $user->getPseudo(),
-						'password' => $user->getPassword() 
+						'password' => $user->getPassword(),
+						'superuser' => $newUser->getSuperUser()
 						);
 					$newJson = $this->setUserJson($data);
 					return $newJson;

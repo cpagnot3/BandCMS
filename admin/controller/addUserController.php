@@ -5,14 +5,13 @@
 	$password 			= $_POST['password'];
 	$passwordConfirm 	= $_POST['confirmPassword'];
 	$redirect 			= $_POST['redirect'];
-
-	if($password!=$passwordConfirm){
-		header('Location: '.$redirect.'?p');
-	}
+	$superuser 			= isset($_POST['superuser']);
+	
 
 	$user = new User();
 	$user->setPseudo($pseudo);
 	$user->setPassword(crypt($password, $password));
+	$user->setSuperUser($superuser);
 	$userRepository = new UserRepository();
 	$newUser = $userRepository->addUser($user);
 	if($newUser){

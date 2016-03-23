@@ -1,1 +1,1 @@
-{"user":{"1":{"pseudo":"root","password":"roK20XGbWEsSM"},"2":{"pseudo":"root2","password":"roK20XGbWEsSM"}}}
+{"user":{"1":{"pseudo":"root","password":"roK20XGbWEsSM","superuser":"true"}}}
