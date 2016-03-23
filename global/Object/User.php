@@ -9,6 +9,8 @@ class User
 
 	private $password;
 
+	private $superuser;
+
 	public function getId()
 	{
 		return $this->id;
@@ -38,6 +40,17 @@ class User
 	public function setPassword($password)
 	{
 		$this->password = $password;
+		return $this;
+	}
+
+	public function getSuperUser()
+	{
+		return $this->superuser;
+	}
+
+	public function setSuperUser($superuser)
+	{
+		$this->superuser = $superuser;
 		return $this;
 	}
 

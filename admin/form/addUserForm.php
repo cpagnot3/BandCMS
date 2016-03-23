@@ -43,6 +43,14 @@
 			</tr>
 			<tr>
 				<td>
+					Super-User :
+				</td>
+				<td>
+					<input type="checkbox" name="superuser" value="true"> 
+				</td>
+			</tr>
+			<tr>
+				<td>
 				</td>
 				<td>
 					<input value="add" type="submit"></input>
