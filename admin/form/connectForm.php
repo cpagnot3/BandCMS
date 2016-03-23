@@ -6,7 +6,9 @@
 
 </head>
 <body>
-	<form action="connectController.php">
+	<?php if(isset($_GET['e'])){echo 'Error Pseudo/Password';}?> 
+	<form action="../Controller/connectController.php" method="post">
+		<input style="visibility:hidden;display:none;" type="text" name="redirect" value= <?php echo '"http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'"'?> >
 	<table>
 		<tr>
 			<td>
@@ -28,7 +30,7 @@
 			<td>
 			</td>
 			<td>
-				<input type="button" value="Connect"></input>
+				<input type="submit" value="Connect"></input>
 			</td>
 		</tr>
 	</table>

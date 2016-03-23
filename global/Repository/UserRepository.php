@@ -3,7 +3,7 @@
 require(dirname(__FILE__).'/../Object/User.php');
 require(dirname(__FILE__).'/./DataManager.php');
 
-class NewsRepository extends DataManager
+class UserRepository extends DataManager
 {
 	public function __construct()
 	{
@@ -17,21 +17,22 @@ class NewsRepository extends DataManager
 
 		foreach ($userList as $id => $user) 
 		{
-			if($user->{'pseudo'}==$pseudo)
+			if($user->{'pseudo'}==$newUser->getPseudo())
 			{
-				return 'Error user already exist';
+				return false;
+				break;
 			}
 			$lastUserId = $id;
 		}
 		$userId = $lastUserId + 1;
 		try {
 			$user = array(	
-				'pseudo' => $user->getPseudo(),
-				'password' => $user->getPassword()
+				'pseudo' => $newUser->getPseudo(),
+				'password' => $newUser->getPassword()
 				);
 			$data->user->$userId = $user;			
 			$newJson = $this->setUserJson($data);
-			return $newJson;
+			return true;
 
 		}catch(Exception $e){
 			echo 'ERROR :'.$e;
