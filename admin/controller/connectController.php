@@ -15,6 +15,7 @@
 		{
 			setcookie(crypt($pseudo,$pseudo), true, time()+3600,"/");
 			setcookie('pseudo', $pseudo, time()+3600,"/");
+			header('Location: http://'.$_SERVER['HTTP_HOST'].'/BandCMS/admin/view/admin.php');
 		}else{
 			header('Location: '.$redirect.'?e');
 

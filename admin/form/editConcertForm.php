@@ -5,8 +5,7 @@
 <body>
 	<?php
 		require(dirname(__FILE__).'/../../global/Repository/ConcertRepository.php');
-	?>
-	<h1>Edit show</h1>
+	?>	
 	<?php 
 		if(isset($_GET['d'])){
 			echo '<div>Show deleted !</div>';
