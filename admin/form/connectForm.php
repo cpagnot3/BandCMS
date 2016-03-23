@@ -7,8 +7,9 @@
 </head>
 <body>
 	<?php if(isset($_GET['e'])){echo 'Error Pseudo/Password';}?> 
-	<form action="../Controller/connectController.php" method="post">
+	<form action=<?php echo '"http://'.$_SERVER['HTTP_HOST'].'/BandCMS/admin/Controller/connectController.php"'?> method="post">
 		<input style="visibility:hidden;display:none;" type="text" name="redirect" value= <?php echo '"http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'"'?> >
+
 	<table>
 		<tr>
 			<td>
