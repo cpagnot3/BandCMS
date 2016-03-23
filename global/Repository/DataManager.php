@@ -20,6 +20,20 @@ class DataManager
 		$data = file_put_contents(dirname(__FILE__).'/../JsonData/site.json', $newJsonString);			
 		return $data;
 	}	
+
+	public function getUserJson()
+	{
+		$json = file_get_contents(dirname(__FILE__).'/../JsonData/user.json');		
+		$data = json_decode($json);
+		return $data;
+	}
+
+	public function setUserJson($newJsonString)
+	{
+		$newJsonString = json_encode($newJsonString);
+		$data = file_put_contents(dirname(__FILE__).'/../JsonData/user.json', $newJsonString);			
+		return $data;
+	}
 }
 
 ?>

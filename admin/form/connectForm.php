@@ -24,6 +24,13 @@
 				<input type="password" name="password"></input>
 			</td>
 		</tr>
+		<tr>
+			<td>
+			</td>
+			<td>
+				<input type="button" value="Connect"></input>
+			</td>
+		</tr>
 	</table>
 	</form>
 </body>

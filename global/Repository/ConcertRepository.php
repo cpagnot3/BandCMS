@@ -66,10 +66,13 @@ class ConcertRepository extends DataManager
 				'lat'		=> $show->getLat(),
 				'long'		=> $show->getLong()
 				);
-			
-		$data->concert->$concertID = $show;			
-		$newJson = $this->setJson($data);
-		return $newJson;		
+		try{	
+			$data->concert->$concertID = $show;			
+			$newJson = $this->setJson($data);
+			return $newJson;
+			}catch(Exception $e){
+				echo 'ERROR : '.$e;
+			}		
 		
 	}
 
@@ -86,18 +89,25 @@ class ConcertRepository extends DataManager
 				'lat'		=> $show->getLat(),
 				'long'		=> $show->getLong()
 				);
-			
-		$data->concert->$id = $show;			
-		$newJson = $this->setJson($data);
-		return $newJson;		
+		try {	
+				$data->concert->$id = $show;			
+				$newJson = $this->setJson($data);
+				return $newJson;
+			}catch(Exception $e){
+				echo 'ERROR : '.$e;
+			}		
 	}
 
 	public function deleteConcert($id)
 	{
-		$data = $this->getJson();
+		try {	
+			$data = $this->getJson();
 			unset($data->concert->$id);
-		$newJson = $this->setJson($data);
-		return $newJson;		
+			$newJson = $this->setJson($data);
+			return $newJson;
+		}catch(Exception $e){
+			echo 'ERROR : '.$e;
+		}		
 	}
 	
 }

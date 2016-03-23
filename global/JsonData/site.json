@@ -69,16 +69,5 @@
          "releaseDate": "\/aaaa",
          "path": "\/..\/..\/Global\/Files\/music\/girlwho.mp3"
       }
-   },
-   "login":{
-      "1":{
-         "pseudo":"root",
-         "password":""
-      },
-      "2":{
-         "pseudo":"root2",
-         "password":""
-      }
-      
-   }
-}
+   }      
+ }
