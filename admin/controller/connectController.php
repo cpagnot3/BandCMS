@@ -6,15 +6,15 @@
 	$redirect = $_POST['redirect'];
 
 	try{
-		$user = new User();
+		$user = new User();	
 		$user->setPseudo($pseudo);
-		$user->setPassword(crypt($password, $password));
+		$user->setPassword(crypt($password, $password),true);
 		$userRepository = new UserRepository();		
 		$connect = $userRepository->connect($user);
 		if($connect)
 		{
-			$_SESSION['pseudo'] = $pseudo;
-		    $_SESSION['acces'] = true;
+			setcookie(crypt($pseudo,$pseudo), true, time()+3600,"/");
+			setcookie('pseudo', $pseudo, time()+3600,"/");
 		}else{
 			header('Location: '.$redirect.'?e');
 
