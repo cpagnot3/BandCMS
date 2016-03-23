@@ -5,13 +5,11 @@
 <body>
 	<?php
 		require(dirname(__FILE__).'/../../global/Repository/ConcertRepository.php');
-	?>	
-	<?php 
+	
 		if(isset($_GET['d'])){
 			echo '<div>Show deleted !</div>';
 		}
-	?>
-	<?php
+	
 		$concertRepository = new ConcertRepository();
 		foreach ($concertRepository->getListConcert() as $concert) {
 			echo '
