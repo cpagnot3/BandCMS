@@ -81,19 +81,17 @@
 		$('#datetimepicker').datetimepicker({
 			format : 'd-m-Y H:i'
 		});			
-	$('#city').change(function(){
-		var city = $(this).val();
-		city = city.replace(" ", "+");
-		url = "https://maps.googleapis.com/maps/api/geocode/json?address="+city+"&key=AIzaSyB14nxFsuqDXgA_4s1kFlefkDO4CcFWxM8";
-    $.get(url, function(data){ 
+		$('#city').change(function(){
+			var city = $(this).val();
+			city = city.replace(" ", "+");
+			url = "https://maps.googleapis.com/maps/api/geocode/json?address="+city+"&key=AIzaSyB14nxFsuqDXgA_4s1kFlefkDO4CcFWxM8";
+	    $.get(url, function(data){ 
     	$('#lat').val(data.results[0].geometry.location.lat); 
     	$('#long').val(data.results[0].geometry.location.lng);       
 
-    });
+   	 });
 	})	
     
-
-
 	</script>
 </body>
 
