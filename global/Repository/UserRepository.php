@@ -102,10 +102,24 @@ class UserRepository extends DataManager
 			$user->setId($id);
 			$user->setPseudo($userData->pseudo);
 			$user->setPassword('');
+			$user->setSuperUser($userData->superuser);
 			$listUser[] = $user;
 		}
 		return $listUser;
 	}
 
+	public function changeSuperUser($id)
+	{
+		try {
+			$data = $this->getUserJson();
+			$userRight = $data->user->$id->superuser;
+			$userRight = !$userRight;
+			$data->user->$id->superuser = $userRight;
+			$newJson = $this->setUserJson($data);
+			return $newJson;
+		}catch(Exception $e){
+			echo 'ERROR : '.$e;
+		}
+	}
 
 }
