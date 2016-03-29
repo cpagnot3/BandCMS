@@ -93,5 +93,33 @@ class UserRepository extends DataManager
 		return $connect;
 	}
 
+	public function getListUser()
+	{
+		$data = $this->getUserJson();
+		$listUser = array();
+		foreach ($data->user as $id => $userData){
+			$user = new User();
+			$user->setId($id);
+			$user->setPseudo($userData->pseudo);
+			$user->setPassword('');
+			$user->setSuperUser($userData->superuser);
+			$listUser[] = $user;
+		}
+		return $listUser;
+	}
+
+	public function changeSuperUser($id)
+	{
+		try {
+			$data = $this->getUserJson();
+			$userRight = $data->user->$id->superuser;
+			$userRight = !$userRight;
+			$data->user->$id->superuser = $userRight;
+			$newJson = $this->setUserJson($data);
+			return $newJson;
+		}catch(Exception $e){
+			echo 'ERROR : '.$e;
+		}
+	}
 
 }

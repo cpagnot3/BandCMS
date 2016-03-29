@@ -18,7 +18,7 @@
 			echo '
 			<form method="post" action="../controller/deleteMusicController.php?id='.$music->getId().'">
 				<input style="visibility:hidden;display:none;" type="text" name="redirect" value= "http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'" >
-				<p><input type="submit" name="action" value="X"> - '.$music->getTitle().' - '.$music->getArtist().' - '.$music->getAlbum().', 	'.$music->getReleaseDate().'   - <a href="addMusicForm.php?id='.$music->getId().'">Edit</a></p>	
+				<p><input type="submit" name="action" value="X"> - '.$music->getTitle().' - '.$music->getArtist().' - '.$music->getAlbum().', 	'.$music->getReleaseDate().'   - <a href="editMusic.php?id='.$music->getId().'">Edit</a></p>	
 			</form>
 			';
 		}
