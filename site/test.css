@@ -3,7 +3,7 @@
 	src: url('../fonts/Walkway-SemiBold.ttf');
 }
 
-h1{
+h1,h2{
 	text-align: center;
 }
 
@@ -60,7 +60,9 @@ span{
 }
 p{
 	background: none !important;
+	width: 100% !important;
 	text-align: justify;
+
 }
 
 .header {
@@ -197,5 +199,5 @@ p{
     width: 700px;
     padding:20px;
     font:12px arial;
-    margin-left: 50px;
+    
 }
