@@ -8,26 +8,16 @@
 	$redirect 	= $_POST['redirect'];
 	$action 	= $_POST['hidden_action'];
 
-	// check empty file input
-	/*
-	if(($_FILES['file']['size'] == 0 && $_FILES['file']['error'] == 0)) {
-		return "no file";
-		exit();
-	}
-	*/
-
-	//upload staff
-
+	//upload staff and verify
 	$extensions = array('.mp3', '.wav');
 	$extension = strrchr($_FILES['file']['name'], '.');
 
-
+	/*
 	if(!in_array($extension, $extensions)) {
 		echo "wrong extension";
 		return;
 	}
-
-
+	*/
 
 	$uploaddir = '/../../global/files/music/';
 	$uploadfile = $uploaddir . basename($_FILES['file']['name']);

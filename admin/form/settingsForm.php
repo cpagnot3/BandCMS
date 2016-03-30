@@ -49,6 +49,7 @@
 					<label>Site logo : </label>
 				</td>		
 				<td>
+					<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
 					<input type="file" name="logo">
 				</td>		
 			</tr>
