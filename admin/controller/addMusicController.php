@@ -19,12 +19,27 @@
 	}
 	*/
 
-	$uploaddir = '/../../global/files/music/';
-	$uploadfile = $uploaddir . basename($_FILES['file']['name']);
+	$uploaddir = '../../global/files/music/';
+	$uploadfile = $uploaddir . $_FILES['file']['name'];
 
-	$writable = is_writable($uploadfile);
-	move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile);
+	// creating folder by php
+	if ( !file_exists($uploaddir) ) {
+	    $oldmask = umask(0);
+	    mkdir ($uploaddir, 0744);
+	}
 
+	$realPath = realpath($uploaddir);
+	$writable = is_writable($realPath);
+	$writable2 = is_writable($uploaddir);
+
+	
+	try{
+		move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile );
+
+	}catch(Exception $e){
+		echo 'ERROR : '.$e;
+	} 
+	
 
 	$show = new Music();
 	$show->setTitle($title);
@@ -43,6 +58,7 @@
 			// var_dump($writable);
 			// var_dump($uploadfile);
 			// comment header to see if dir is writable
+
 
 			header('Location: '.$redirect.'?a'); 
 		}catch(Exception $e){

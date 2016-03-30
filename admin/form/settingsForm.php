@@ -6,17 +6,8 @@
 <body>
 
 	<?php 
-		error_reporting(E_ALL);
-		echo "ok1";
-		try {
-			require(dirname(__FILE__) . '/../../Global/Repository/SettingsRepository.php');
+		require(dirname(__FILE__) . '/../../Global/Repository/SettingsRepository.php');
 
-		}
-		catch(Exception $e){
-			echo 'ERROR : '.$e;
-		} 
-
-		echo "ok2";
 		$settingsRepository = new SettingsRepository();
 		$settings = $settingsRepository->getSettings();
 
@@ -24,7 +15,7 @@
 			echo '<div>Settings saved !</div>';
 		}
 	?>
-	<form method="post" action="../controller/settingsController.php">
+	<form enctype="multipart/form-data" method="post" action="../controller/settingsController.php">
 		<input style="visibility:hidden;display:none;" type="text" name="redirect" value= <?php echo '"http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'"'?> >
 
 		<table>
@@ -38,7 +29,7 @@
 			</tr>
 			<tr>	
 				<td>
-					<label>Site slogan : </label>
+					<label>Slogan : </label>
 				</td>		
 				<td>
 					<input type="text" name="slogan" value=<?php echo $settings->getSlogan(); ?> >
@@ -46,11 +37,11 @@
 			</tr>
 			<tr>
 				<td>
-					<label>Site logo : </label>
+					<label>Logo : </label>
 				</td>		
 				<td>
-					<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-					<input type="file" name="logo">
+					<input type="hidden" name="MAX_FILE_SIZE" value="300000000" />
+					<input type="file" name="band-logo" >
 				</td>		
 			</tr>
 			
