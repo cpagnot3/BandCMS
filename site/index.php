@@ -64,7 +64,7 @@
 			<div class="col-lg-4 col-xs-12">
 				<div class="rounded">
 				<a href="./php/show.php">
-				<h2>prochain concerts</h2>	
+				<h2>Prochains concerts</h2>	
 				</a>
 				</div>
 			</div>

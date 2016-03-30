@@ -14,8 +14,8 @@
 		include('header.php');
 	?>
 	<h1 class="col-lg-12">Liste des concerts</h1>
-	<div id="map" style="height: 500px" class="col-lg-6"></div>	
-	<div class="col-lg-6">
+	<div id="map" style="height: 480px" class="col-lg-6"></div>	
+	<div id="show" class="col-lg-6">
 		<table>
 			
 	<?php
