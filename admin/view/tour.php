@@ -5,6 +5,7 @@
 	<head>
 	</head>
 	<body>
+		<a href="../index.php">Home</a>
 		<h1>Edit your tour</h1>
 		<h2>List of the future show</h2>
 		<?php include('../form/editConcertForm.php'); ?>
