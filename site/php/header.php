@@ -9,8 +9,8 @@
 		</ul>
 	</nav>
 	<div class="header" style="text-align:center;">
-		<a href="./img/profil.jpg">
-			<img src="./img/profil.jpg"/>
+		<a href="../img/profil.jpg">
+			<img src="../img/profil.jpg"/>
 		</a>
 	</div>
 	<div class="lowheader col-lg-12"></div>

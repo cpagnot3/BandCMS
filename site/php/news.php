@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Title of the document</title>
+<title>News</title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="../test.css">
+<link rel="stylesheet" type="text/css" href="../css/global.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 	<?php
 		require(dirname(__FILE__).'/../../global/Repository/NewsRepository.php');
+		include('header.php')
 	?>
-	<h1>Liste des news</h1>	
+	
 	<?php
 	$newsRepository = new NewsRepository();
 	if(!isset($_GET['id'])){		
 		foreach ($newsRepository->getListNews(10) as $news) {
-			echo '  <article>
+			echo '  
+					<h1>Liste des news</h1>	
+					<article>
 						<h2>'.$news->getTitle().'</h2>
 					  	<p>'.$news->getDate().'</p>
 					  	<img src="'.$news->getImage().'">
