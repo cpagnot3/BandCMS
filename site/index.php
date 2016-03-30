@@ -26,9 +26,26 @@
 <!-- .container principal -->
 	<main class="container">
 	<!-- #main header -->
-		<?php include('./php/header.php'); ?> 
+		<header id="main-header" class="row">
+	<nav class="col-lg-12">
+		<ul>
+			<li><a href="./php/contact.php">Contact</a></li>
+			<li><a href="#site/php/Band">Band</a></li>
+			<li><a href="./php/show.php">Concerts</a></li>
+			<li><a href="./php/music.php">Nos Musiques</a></li>
+			<li><a href="./php/news.php">News</a></li>
+			<li><a href="./index.php">accueil</a></li>
+		</ul>
+	</nav>
 
+	<div class="logo">
+		<div id="logo-pad">
+			<img src="./img/profil.jpg"/>
+		</div>
+	</div>
+	<div class="lowheader col-lg-12"></div>
 
+</header>
 	
 	
 	
@@ -76,5 +93,26 @@
 		</div>
 	</div>
 </div>
+<!-- #main-footer -->
+		<footer id="main-footer" class="row footer">
+			<div class="col-lg-4 col-xs-12"><ul class="social">
+		<li><a <?php echo 'href="'.$contact->getFbLink().'"'; ?> target="_blank"><span class="icon-facebook"></span></a></li>
+		<li><a <?php echo 'href="'.$contact->getYtLink().'"'; ?> target="_blank"><span class="icon-youtube"></span></a></li>
+		<li><a <?php echo 'href="'.$contact->getTwLink().'"'; ?> target="_blank"><span class="icon-twitter"></span></a></li>
+		</ul></div>
+			<div class="col-lg-4 col-xs-12"></div>
+			<div class="col-lg-4 col-xs-12"><div class="end-footer">
+		
+		<ul>
+		<li><a href="">Mentions Légales</a></li>
+
+		<li><a href="">Cookies</a></li>
+		</ul></div></div>			
+
+
+		</footer> 
+
 </main>
-<?php include('./php/footer.php'); ?> 
+</body>
+</html>
+
