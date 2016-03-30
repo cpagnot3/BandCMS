@@ -36,7 +36,7 @@
 		$settings->setSlogan($slogan);
 
 		$settingsRepository = new SettingsRepository();		
-		$data = $settingsRepository->editSettings($settings);	
+		$data = $settingsRepository->updateSettings($settings);	
 		header('Location: '.$redirect.'?e');
 	}catch(Exception $e){
 		echo 'ERROR : '.$e;

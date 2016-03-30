@@ -35,5 +35,5 @@ class SettingsRepository extends DataManager
 		return $newJson;
 
 	}
-
+}
 ?>

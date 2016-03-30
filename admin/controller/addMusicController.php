@@ -5,9 +5,8 @@
 	$artist 	= $_POST['artist'];
 	$album		= $_POST['album'];
 	$releaseDate= $_POST['release-date'];
-	//$file		= $_FILES;
-	$action 	= $_POST['action'];
 	$redirect 	= $_POST['redirect'];
+	$action 	= $_POST['hidden_action'];
 
 	// check empty file input
 	/*
@@ -22,14 +21,13 @@
 	$extensions = array('.mp3', '.wav');
 	$extension = strrchr($_FILES['file']['name'], '.');
 
-	echo "ma bite";
 
 	if(!in_array($extension, $extensions)) {
 		echo "wrong extension";
 		return;
 	}
 
-	echo "ma bite2";
+
 
 	$uploaddir = '/../../global/files/music/';
 	$uploadfile = $uploaddir . basename($_FILES['file']['name']);
@@ -37,7 +35,6 @@
 	$writable = is_writable($uploadfile);
 	move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile);
 
-	echo "ma bite3";
 
 	$show = new Music();
 	$show->setTitle($title);
@@ -50,13 +47,14 @@
 	$musicRepository = new MusicRepository();
 	if($action=='Add'){
 		try{
-
-			echo "ma bite6666";			
+		
 			$newShow = $musicRepository->addMusic($show);
-			echo "writable dir ?";
-			var_dump($writable);
-			var_dump($uploadfile);
-			//header('Location: '.$redirect.'?a'); 
+			// echo "writable dir ?";
+			// var_dump($writable);
+			// var_dump($uploadfile);
+			// comment header to see if dir is writable
+
+			header('Location: '.$redirect.'?a'); 
 		}catch(Exception $e){
 			echo 'ERROR : '.$e;
 		}
@@ -70,6 +68,5 @@
 		}
 	}
 
-	echo "ma bite4";
 
 ?>
