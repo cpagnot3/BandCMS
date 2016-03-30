@@ -8,6 +8,7 @@
 	<?php
 		require(dirname(__FILE__).'/../../global/Repository/MusicRepository.php');
 	?>
+<?php include('./php/header.php'); ?> 
 	<h1>Liste des musiques</h1>	
 	<?php
 	$MusicRepository = new MusicRepository();
@@ -34,6 +35,4 @@
 		}
 	
 	?>	
-</body>
-
-</html>
+<?php include('./php/footer.php'); ?> 
