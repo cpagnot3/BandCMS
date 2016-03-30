@@ -12,10 +12,10 @@ $l-screen:							1366px;
 $lg-screen:							1920px;
 
 /*colors*/	
-$primary-color:						#FFF;
+$primary-color:						#000000;
 $secondary-color:					#088DA6;
 $tertiary-color:					#BC3184;
-$quaternary-color:					light-grey;
+$quaternary-color:					#808080;
 
 /*fonts*/
 @include declare-font-face(Lato Sans Hairline, lato-hairline-webfont, normal);
@@ -42,10 +42,10 @@ $social-bar-font-size:				1.7em;
 
 /*nav bar*/
 
-$nav-bar-bg-color:					#A9FFD6;/*darken($quaternary-color, 20%);*/
-$nav-bar-links-color:				$darken(primary-color,20%);
+$nav-bar-bg-color:					white;/*darken($quaternary-color, 20%);*/
+$nav-bar-links-color:				primary-color;
 $nav-bar-links-color-hover:			$primary-color;/*$tertiary-color;*/
-$nav-bar-links-bg-color:			none;/*$primary-color;*/
+$nav-bar-links-bg-color:			#FFFFFF;/*$primary-color;*/
 $nav-bar-links-bg-color-hover:		none;/*lighten($tertiary-color,30%);*/
 $nav-bar-font-size:					1em;
 

@@ -3,6 +3,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script src="/BandCMS/admin/assets/js/jquery.datetimepicker.full.js"></script>
 	<script src="/BandCMS/admin/assets/js/jquery.datetimepicker.js"></script>
+	<script src="/BandCMS/admin/assets/js/verify.notify.min.js"></script>
 </head>
 	
 <body>
@@ -19,16 +20,17 @@
 			$music = $musicRepository->getMusicById($id);
 		}
 	?>
-	<form enctype="multipart/form-data" method="post" action="../controller/addMusicController.php">
+	<form enctype="multipart/form-data" method="POST" action="../controller/addMusicController.php">
 		<input style="visibility:hidden;display:none;" type="text" name="redirect" value= <?php echo '"http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'"'?> >
 		<?php echo (isset($_GET['id']))? '<input style="visibility:hidden;display:none;" type="text" name="id" value="'.$id.'">': ''; ?>
+		<input style="visibility:hidden;display:none;" type="text" name="hidden_action" value= <?php echo (isset($_GET['id'])) ? 'Edit' : 'Add'; ?> >
 		<table>
 			<tr>
 				<td>
 					<label>Title : </label>
 				</td>			
 				<td>
-					<input type="text" name="title" value=<?php echo (isset($_GET['id']))? $music->getTitle() : '';  ?> >
+					<input type="text" data-validate="required" name="title" value=<?php echo (isset($_GET['id']))? $music->getTitle() : '';  ?> >
 				</td>		
 			</tr>
 			<tr>	
@@ -36,7 +38,7 @@
 					<label>Artist : </label>
 				</td>		
 				<td>
-					<input type="text" name="artist" value=<?php echo (isset($_GET['id']))? $music->getArtist() : '';  ?> >
+					<input type="text" data-validate="required" name="artist" value=<?php echo (isset($_GET['id']))? $music->getArtist() : '';  ?> >
 				</td>		
 			</tr>
 			<tr>
@@ -68,7 +70,7 @@
 		
 			<tr>
 				<td>		
-					<input type="submit" name="action" value=<?php echo (isset($_GET['id']))? 'Edit' : 'Add' ;?>>
+					<input name="action" value=<?php echo (isset($_GET['id'])) ? 'Edit' : 'Add'; ?> type="submit"   > 
 				</td>
 			</tr>
 		</table>

@@ -76,7 +76,7 @@ class MusicRepository extends DataManager
 				'path'			=> $show->getPath()
 				);
 			
-		$data->music->$id = $show;			
+		$data->music->$id = $show;
 		$newJson = $this->setJson($data);
 		return $newJson;	
 	}

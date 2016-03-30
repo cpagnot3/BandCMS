@@ -1,30 +1,23 @@
 <?php 
-	require(dirname(__FILE__).'/../../Global/Repository/MusicRepository.php');
+	require(dirname(__FILE__).'/../../global/Repository/MusicRepository.php');
 
 	$title 		= $_POST['title'];
 	$artist 	= $_POST['artist'];
 	$album		= $_POST['album'];
 	$releaseDate= $_POST['release-date'];
-	//$file		= $_FILES;
-	$action 	= $_POST['action'];
 	$redirect 	= $_POST['redirect'];
+	$action 	= $_POST['hidden_action'];
 
-	// check empty file input
-	/*
-	if(($_FILES['file']['size'] == 0 && $_FILES['file']['error'] == 0)) {
-		return "no file";
-		exit();
-	}
-	*/
-
-	//upload staff
-
-	$extensions = array('.mp3', '.wav', '.jpg', '.jpeg');
+	//upload staff and verify
+	$extensions = array('.mp3', '.wav');
 	$extension = strrchr($_FILES['file']['name'], '.');
 
+	/*
 	if(!in_array($extension, $extensions)) {
-		return "wrong extension";
+		echo "wrong extension";
+		return;
 	}
+	*/
 
 	$uploaddir = '/../../global/files/music/';
 	$uploadfile = $uploaddir . basename($_FILES['file']['name']);
@@ -41,15 +34,17 @@
 	$show->setPath($uploadfile);
 
 
-
 	$musicRepository = new MusicRepository();
 	if($action=='Add'){
-		try{			
+		try{
+		
 			$newShow = $musicRepository->addMusic($show);
-			echo "writable dir ?";
-			var_dump($writable);
-			var_dump($uploadfile);
-			//header('Location: '.$redirect.'?a'); 
+			// echo "writable dir ?";
+			// var_dump($writable);
+			// var_dump($uploadfile);
+			// comment header to see if dir is writable
+
+			header('Location: '.$redirect.'?a'); 
 		}catch(Exception $e){
 			echo 'ERROR : '.$e;
 		}
@@ -62,5 +57,6 @@
 			echo 'ERROR : '.$e;
 		}
 	}
+
 
 ?>

@@ -22,7 +22,6 @@ nav h1 {
 nav ul {
 	width: 100%;
 	margin: auto;
-	margin-top: -85px;
 	padding: 0;
 	list-style-type: none;
 	text-align: left;
@@ -54,25 +53,23 @@ nav ul li a:hover {
 	color: #fff;
 	opacity: 0.4;
 }
-span{
+article{
 	margin-bottom: 2%;
-	text-align: justify;
-}
-p{
-	background: none !important;
-	width: 100% !important;
-	text-align: justify;
-
+	text-align: center;
+	background-color: #dadada;
+	padding-bottom: 5px;
+	margin-bottom: 2px;
 }
 
-.header {
+h2{
+	    padding-top: 25px;
+}
+.logo {
 	background-image: url(img/bg.jpg);
-
 	height: 300px;
-	margin-top: 60px;
 }
 
-.header h1 {
+.logo h1 {
 	padding-top: 35px;
 	font-family: helvetica;
 	font-size: 30px;
@@ -80,16 +77,17 @@ p{
 	color: #C2C242;
 	font-weight: normal;
 }
+#logo-pad{
+	padding-top: 15%;
+}
+.logo img {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    z-index: 10;
+    max-width: 20%;
 
-.header img {
-	position: absolute;
-	width: 20%;
-    left: 50%;
-    margin-left: -10%;
-	text-align: center;
-	margin-top: 250px;
-	cursor: pointer;
-	z-index:10;
 }
 
 .lowheader {
@@ -98,27 +96,28 @@ p{
 	height: 80px;	
 }
 
-.footer {
-	margin-top: 40px;
-	background-color: grey;
-	bottom: 0;
-	width: 100%;
-	height: 100px;
-	
-}
+
 #main-content
 {
- margin-top: 40px;
+ margin-top: 2em;
 }
+.news{
+	width:100%;
+	padding-left: 20px;
+    padding-right: 20px;
+}
+.rounded{
+	background: lavender;
+    border-radius: 15px;
+    height: 100px;
+    vertical-align: middle;
 
+}
 .social {
 	
-	height: 10%;
+	
 	margin: auto;
-	padding: 0;
 	list-style-type: none;
-	text-align: center;
-
 }
 
 .social img {
@@ -168,9 +167,6 @@ p{
   
   	padding-top: 1%;
     padding-bottom: 1%;
-}
-#content{
-	margin-bottom: 40px;
 }
 .content {
 	position: relative;
