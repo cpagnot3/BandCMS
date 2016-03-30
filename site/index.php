@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 <?php 
 ?>
+=======
+
+>>>>>>> 6ff95cfe29140d894a949cab2237c41401922d31
 <!doctype html>
 <html>
 <head>
@@ -13,7 +17,15 @@
 <script type="text/javascript" src="js/app.js"></script>
 <script src="js-global/FancyZoomHTML.js" type="text/javascript"></script>-->
 </head>
+<<<<<<< HEAD
 
+=======
+<?php 
+	include('../global/Repository/NewsRepository.php');
+	$newsRepository = new NewsRepository();
+	$news = $newsRepository->getLastNews();
+?>
+>>>>>>> 6ff95cfe29140d894a949cab2237c41401922d31
 <body>
 
 <!-- .container principal -->
@@ -30,6 +42,7 @@
 				</ul>
 			</nav>
 			<div class="header" style="text-align:center;">
+
 			
 					<img src="img/profil.jpg"/>
 				
@@ -49,13 +62,20 @@
 			<h1 class="col-lg-12">Ma Bande</h1>
 			<div class="col-lg-4">
 				<h2>Le groupe</h2>
+
 							</div>
 			<div class="col-lg-4">
 				<h2>prochain concerts</h2>	
+
+			</div>
+
+			<div class="col-lg-4">
+				<h2>prochain concerts</h2>
 			</div>
 
 			<div class="col-lg-4">
 				<h2>Le groupe</h2>
+
 			</div>
 		</section >
 		
@@ -64,7 +84,13 @@
 		<div class="col-lg-12">
 			<h1 >News</h1>
 			<article>
-			</article>
+
+				<h2><?php echo $news->getTitle(); ?></h2>
+			  	<p><?php echo $news->getDate(); ?></p>
+			  	<img <?php echo 'src="'.$news->getImage().'"';?>>
+			  	<p><?php echo $news->getChapo() ?><br/><a <?php echo 'href="news.php?id='.$news->getId().'"' ?>>Lire la news</a></p>
+			</article>	 
+
 		</div>
 	</div>
 </div>
@@ -107,6 +133,10 @@
 
 </main>
 </body>
+<<<<<<< HEAD
 </html>
 <?php 
 ?>
+=======
+</html>
+>>>>>>> 6ff95cfe29140d894a949cab2237c41401922d31
