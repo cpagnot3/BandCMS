@@ -16,12 +16,15 @@
 	<h1 class="col-lg-12">Liste des concerts</h1>
 	<div id="map" style="height: 500px" class="col-lg-6"></div>	
 	<div class="col-lg-6">
+		<table>
+			
 	<?php
 		$concertRepository = new ConcertRepository();
 		foreach ($concertRepository->getListConcert() as $concert) {
 			echo '<p>'.$concert->getDateConcert().' - '.$concert->getPlace().' - '.$concert->getCity().', 	'.$concert->getCountry().'  - <a href="'.$concert->getBilleterie().'">Billeterie</a></p>';
 		}
 	?>	
+		</table>
 	</div>
 	
 
