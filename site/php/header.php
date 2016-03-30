@@ -6,7 +6,7 @@
 			<li><a href="show.php">Concerts</a></li>
 			<li><a href="music.php">Nos Musiques</a></li>
 			<li><a href="news.php">News</a></li>
-			<li><a href="../index.php">accueil</a></li>
+			<li><a href="../index.php">Accueil</a></li>
 		</ul>
 	</nav>
 

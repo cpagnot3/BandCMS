@@ -34,7 +34,7 @@
 			<li><a href="./php/show.php">Concerts</a></li>
 			<li><a href="./php/music.php">Nos Musiques</a></li>
 			<li><a href="./php/news.php">News</a></li>
-			<li><a href="./index.php">accueil</a></li>
+			<li><a href="./index.php">Accueil</a></li>
 		</ul>
 	</nav>
 

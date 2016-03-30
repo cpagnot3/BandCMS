@@ -1,4 +1,8 @@
 <!-- #main-footer -->
+<?php 	require_once('../../global/Repository/ContactRepository.php');
+$contactRepository = new ContactRepository();
+	$contact = $contactRepository->getContact();
+?>	
 		<footer id="main-footer" class="row footer">
 			<div class="col-lg-4 col-xs-12"><ul class="social">
 		<li><a <?php echo 'href="'.$contact->getFbLink().'"'; ?> target="_blank"><span class="icon-facebook"></span></a></li>
@@ -17,7 +21,7 @@
 
 		</footer> 
 
-
+</main>
 </body>
 </html>
 

@@ -14,6 +14,7 @@
 		require(dirname(__FILE__).'/../../global/Repository/MusicRepository.php');
 	?>
 <?php include('header.php'); ?> 
+	<main class="container">
 	<h1>Liste des musiques</h1>	
 	<?php
 	$MusicRepository = new MusicRepository();

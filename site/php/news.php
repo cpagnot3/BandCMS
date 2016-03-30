@@ -10,10 +10,11 @@
 
 <body>
 	<?php
-		require(dirname(__FILE__).'/../../global/Repository/NewsRepository.php');
+		require_once(dirname(__FILE__).'/../../global/Repository/NewsRepository.php');
 		include('header.php')
 	?>
-	
+	<main class="container">
+	<div class="news">
 	<?php
 	$newsRepository = new NewsRepository();
 	if(!isset($_GET['id'])){		
@@ -42,4 +43,5 @@
 		}
 	
 	?>	
+	</div>
 <?php include('footer.php'); ?> 
