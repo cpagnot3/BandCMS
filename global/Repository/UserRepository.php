@@ -1,7 +1,7 @@
 <?php 
 
-require(dirname(__FILE__).'/../Object/User.php');
-require(dirname(__FILE__).'/./DataManager.php');
+require_once(dirname(__FILE__).'/../Object/User.php');
+require_once(dirname(__FILE__).'/./DataManager.php');
 
 class UserRepository extends DataManager
 {
