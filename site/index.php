@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-<?php 
-?>
-=======
 
->>>>>>> 6ff95cfe29140d894a949cab2237c41401922d31
 <!doctype html>
 <html>
 <head>
@@ -17,21 +12,18 @@
 <script type="text/javascript" src="js/app.js"></script>
 <script src="js-global/FancyZoomHTML.js" type="text/javascript"></script>-->
 </head>
-<<<<<<< HEAD
 
-=======
 <?php 
 	include('../global/Repository/NewsRepository.php');
 	$newsRepository = new NewsRepository();
 	$news = $newsRepository->getLastNews();
 ?>
->>>>>>> 6ff95cfe29140d894a949cab2237c41401922d31
 <body>
 
 <!-- .container principal -->
 	<main class="container">
 	<!-- #main header -->
-		<header id="main-header" class="row">
+		<header class="row">
 			<nav class="col-lg-12">
 				<ul>
 					<li><a href="./">accueil</a></li>
@@ -41,7 +33,7 @@
   					<li><a href="#contact">Contact</a></li>
 				</ul>
 			</nav>
-			<div class="header" style="text-align:center;">
+			<div class="logo" style="text-align:center;">
 
 			
 					<img src="img/profil.jpg"/>
@@ -94,7 +86,7 @@
 		</div>
 	</div>
 </div>
-<!-- #main-footer 
+<!-- #main-footer -->
 		<footer id="main-footer" class="row footer">
 			<div class="col-lg-4 col-xs-12"><ul class="social">
 		<li><a href="https://www.facebook.com/" target="_blank"><span class="icon-facebook"></span></a></li>
@@ -111,32 +103,8 @@
 		</ul>
 	</div></div>			
 
-		</footer> -->
-
-
-<div class="footer col-lg-12">
-<div class="end-footer col-lg-4 col-xs-12">
-  	<ul class="social">
-		<li><a href="https://www.facebook.com/" target="_blank"><span class="icon-facebook"></span></a></li>
-		<li><a href="https://instagram.com/" target="_blank"><span class="icon-instagram"></span></a></li>
-		<li><a href="https://www.linkedin.com/" target="_blank"><span class="icon-linkedin"></span></a></li>
-	</ul>
-</div>
-	<div class="end-footer col-lg-4 col-xs-12">
-		<ul>
-		<li><a href="">Mentions Légales</a></li>
-
-		<li><a href="">Cookies</a></li>
-		</ul>
-	</div>
-</div>
-
+		</footer> 
 </main>
 </body>
-<<<<<<< HEAD
 </html>
-<?php 
-?>
-=======
-</html>
->>>>>>> 6ff95cfe29140d894a949cab2237c41401922d31
+

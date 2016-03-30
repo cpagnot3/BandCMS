@@ -65,14 +65,14 @@ p{
 
 }
 
-.header {
+.logo {
 	background-image: url(img/bg.jpg);
 
 	height: 300px;
 	margin-top: 60px;
 }
 
-.header h1 {
+.logo h1 {
 	padding-top: 35px;
 	font-family: helvetica;
 	font-size: 30px;
@@ -81,7 +81,7 @@ p{
 	font-weight: normal;
 }
 
-.header img {
+.logo img {
 	position: absolute;
 	width: 20%;
     left: 50%;
