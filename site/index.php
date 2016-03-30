@@ -15,34 +15,19 @@
 
 <?php 
 	include('../global/Repository/NewsRepository.php');
+	include('../global/Repository/ContactRepository.php');
 	$newsRepository = new NewsRepository();
 	$news = $newsRepository->getLastNews();
+	$contactRepository = new ContactRepository();
+	$contact = $contactRepository->getContact();
 ?>
 <body>
 
 <!-- .container principal -->
 	<main class="container">
 	<!-- #main header -->
-		<header class="row">
-			<nav class="col-lg-12">
-				<ul>
-					<li><a href="./">accueil</a></li>
-					<li><a href="#accueil">Accueil</a></li>
-  					<li><a href="#apropos">A propos</a></li>
-  					<li><a href="#galerie">Galerie</a></li>
-  					<li><a href="#contact">Contact</a></li>
-				</ul>
-			</nav>
-			<div class="logo" style="text-align:center;">
+		<?php include('./php/header.php'); ?> 
 
-			
-					<img src="img/profil.jpg"/>
-				
-			</div>
-			<div class="lowheader col-lg-12"></div>
-
-		</header>
-  
 
 	
 	
@@ -80,7 +65,7 @@
 				<h2><?php echo $news->getTitle(); ?></h2>
 			  	<p><?php echo $news->getDate(); ?></p>
 			  	<img <?php echo 'src="'.$news->getImage().'"';?>>
-			  	<p><?php echo $news->getChapo() ?><br/><a <?php echo 'href="news.php?id='.$news->getId().'"' ?>>Lire la news</a></p>
+			  	<p><?php echo $news->getChapo() ?><br/><a <?php echo 'href="php/news.php?id='.$news->getId().'"' ?>>Lire la news</a></p>
 			</article>	 
 
 		</div>
@@ -95,15 +80,24 @@
 	</ul></div>
 			<div class="col-lg-4 col-xs-12"></div>
 			<div class="col-lg-4 col-xs-12"><div class="end-footer">
-		<ul>
-		<li><a href="">Mentions légales</a></li>
-		<li><a href="">FAQ</a></li>
-		<li><a href="">Cookies</a></li>
-		<li><a href="">Conditions générales</a></li>
+		<ul class="social">
+		<li><a <?php echo 'href="'.$contact->getFbLink().'"'; ?> target="_blank"><span class="icon-facebook"></span></a></li>
+		<li><a <?php echo 'href="'.$contact->getYtLink().'"'; ?> target="_blank"><span class="icon-youtube"></span></a></li>
+		<li><a <?php echo 'href="'.$contact->getTwLink().'"'; ?> target="_blank"><span class="icon-twitter"></span></a></li>
 		</ul>
 	</div></div>			
 
+
 		</footer> 
+
+<div class="footer col-lg-12">
+<div class="end-footer col-lg-4 col-xs-12">
+  	
+</div>
+	<div class="end-footer col-lg-4 col-xs-12">
+
+	</div>
+</div>
 </main>
 </body>
 </html>
