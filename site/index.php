@@ -38,22 +38,21 @@
 		<section id="main-content" class="row">
 			<h1 class="col-lg-12">Ma Bande</h1>
 			<div class="col-lg-4">
+				<a href="#band.php">
 				<h2>Le groupe</h2>
-
-							</div>
+				</a>
+			</div>
 			<div class="col-lg-4">
+				<a href="./php/show.php">
 				<h2>prochain concerts</h2>	
-
+				</a>
 			</div>
-
 			<div class="col-lg-4">
-				<h2>prochain concerts</h2>
+				<a href="#galerie.php">
+				<h2>Galerie</h2>
+				</a>
 			</div>
 
-			<div class="col-lg-4">
-				<h2>Le groupe</h2>
-
-			</div>
 		</section >
 		
 
@@ -74,30 +73,22 @@
 <!-- #main-footer -->
 		<footer id="main-footer" class="row footer">
 			<div class="col-lg-4 col-xs-12"><ul class="social">
-		<li><a href="https://www.facebook.com/" target="_blank"><span class="icon-facebook"></span></a></li>
-		<li><a href="https://instagram.com/" target="_blank"><span class="icon-facebook"></span></a></li>
-		<li><a href="https://www.linkedin.com/" target="_blank"><span class="icon-facebook"></span></a></li>
-	</ul></div>
-			<div class="col-lg-4 col-xs-12"></div>
-			<div class="col-lg-4 col-xs-12"><div class="end-footer">
-		<ul class="social">
 		<li><a <?php echo 'href="'.$contact->getFbLink().'"'; ?> target="_blank"><span class="icon-facebook"></span></a></li>
 		<li><a <?php echo 'href="'.$contact->getYtLink().'"'; ?> target="_blank"><span class="icon-youtube"></span></a></li>
 		<li><a <?php echo 'href="'.$contact->getTwLink().'"'; ?> target="_blank"><span class="icon-twitter"></span></a></li>
-		</ul>
-	</div></div>			
+		</ul></div>
+			<div class="col-lg-4 col-xs-12"></div>
+			<div class="col-lg-4 col-xs-12"><div class="end-footer">
+		
+		<ul>
+		<li><a href="">Mentions Légales</a></li>
+
+		<li><a href="">Cookies</a></li>
+		</ul></div></div>			
 
 
 		</footer> 
 
-<div class="footer col-lg-12">
-<div class="end-footer col-lg-4 col-xs-12">
-  	
-</div>
-	<div class="end-footer col-lg-4 col-xs-12">
-
-	</div>
-</div>
 </main>
 </body>
 </html>

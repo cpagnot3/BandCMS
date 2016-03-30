@@ -8,7 +8,7 @@
 				<li><a href="#contact">Contact</a></li>
 		</ul>
 	</nav>
-	<div class="header" style="text-align:center;">
+	<div class="logo" style="text-align:center;">
 		<a href="./img/profil.jpg">
 			<img src="./img/profil.jpg"/>
 		</a>
