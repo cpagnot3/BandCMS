@@ -27,7 +27,7 @@
 		try{			
 			$id=$_POST['id'];
 			$editNews = $newsRepository->editNews($id,$news);
-			header('Location: ../form/addNewsForm.php?m');  
+			header('Location: ../view/news.php?m');  
 		}catch(Exception $e){
 			echo 'ERROR : '.$e;
 		}

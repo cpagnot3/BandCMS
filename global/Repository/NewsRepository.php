@@ -47,6 +47,24 @@ class NewsRepository extends DataManager
 
 	}
 
+	public function getAllNews()
+	{
+		$data = $this->getJson();
+		$listNews = array();
+		foreach($data->news as $key => $newsValue){
+			$news = new News();	
+			$news->setId($key);
+			$news->setTitle($newsValue->title);
+			$news->setDate($newsValue->date);
+			$news->setChapo($newsValue->chapo);
+			$news->setImage($newsValue->image);
+			$news->setTexte($newsValue->texte);
+			$listNews[] = $news;
+		}			
+		return $listNews;
+	}
+	
+
 	public function getListNews($limit)
 	{
 		$data = $this->getJson();
