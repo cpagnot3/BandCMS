@@ -15,7 +15,7 @@
 	$userRepository = new UserRepository();
 	$newUser = $userRepository->addUser($user);
 	if($newUser){
-		echo 'créer';
+		header('Location: '.$redirect);
 	}else{
 		header('Location: '.$redirect.'?u');
 	}
