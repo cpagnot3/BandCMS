@@ -2,13 +2,18 @@
 <html>
 <head>
 <title>Music</title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="../test.css">
+<link rel="stylesheet" type="text/css" href="../css/global.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 
 <body>
 	<?php
 		require(dirname(__FILE__).'/../../global/Repository/MusicRepository.php');
 	?>
-<?php include('./php/header.php'); ?> 
+<?php include('header.php'); ?> 
 	<h1>Liste des musiques</h1>	
 	<?php
 	$MusicRepository = new MusicRepository();
@@ -35,4 +40,4 @@
 		}
 	
 	?>	
-<?php include('./php/footer.php'); ?> 
+<?php include('footer.php'); ?> 

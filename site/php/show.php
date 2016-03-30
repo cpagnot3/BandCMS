@@ -54,4 +54,4 @@
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB14nxFsuqDXgA_4s1kFlefkDO4CcFWxM8&callback=initMap"
     async defer></script>
-<?php include('./php/footer.php'); ?> 
+<?php include('footer.php'); ?> 
