@@ -34,6 +34,19 @@ class DataManager
 		$data = file_put_contents(dirname(__FILE__).'/../JsonData/user.json', $newJsonString);			
 		return $data;
 	}
+
+	public function getSettingsJson() {
+		$json = file_get_contents(dirname(__FILE__).'/../JsonData/settings.json');		
+		$data = json_decode($json);
+		return $data;
+	}
+
+	public function setSettingsJson($newJsonString)
+	{
+		$newJsonString = json_encode($newJsonString);
+		$data = file_put_contents(dirname(__FILE__).'/../JsonData/settings.json', $newJsonString);			
+		return $data;
+	}
 }
 
 ?>

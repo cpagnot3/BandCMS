@@ -20,9 +20,10 @@
 			$music = $musicRepository->getMusicById($id);
 		}
 	?>
-	<form enctype="multipart/form-data" method="post" action="../controller/addMusicController.php">
+	<form enctype="multipart/form-data" method="POST" action="../controller/addMusicController.php">
 		<input style="visibility:hidden;display:none;" type="text" name="redirect" value= <?php echo '"http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'"'?> >
 		<?php echo (isset($_GET['id']))? '<input style="visibility:hidden;display:none;" type="text" name="id" value="'.$id.'">': ''; ?>
+		<input style="visibility:hidden;display:none;" type="text" name="hidden_action" value= <?php echo (isset($_GET['id'])) ? 'Edit' : 'Add'; ?> >
 		<table>
 			<tr>
 				<td>
@@ -69,7 +70,7 @@
 		
 			<tr>
 				<td>		
-					<input type="submit" name="action" value=<?php echo (isset($_GET['id']))? 'Edit' : 'Add' ;?>>
+					<input name="action" value=<?php echo (isset($_GET['id'])) ? 'Edit' : 'Add'; ?> type="submit"   > 
 				</td>
 			</tr>
 		</table>

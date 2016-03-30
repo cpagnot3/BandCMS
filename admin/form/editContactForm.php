@@ -6,8 +6,7 @@
 		require(dirname(__FILE__).'/../../Global/Repository/ContactRepository.php');
 		$contactRepository = new ContactRepository();
 		$contact = $contactRepository->getContact();
-	?>
-	<?php 
+
 		if(isset($_GET['e'])){
 			echo '<div>Contact edited !</div>';
 		}

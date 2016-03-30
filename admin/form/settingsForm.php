@@ -1,73 +1,71 @@
 <head>
 
-	<link rel="stylesheet" type="text/css" href="/BandCMS/admin/assets/css/jquery-te-1.4.0.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-	<script src="/BandCMS/admin/assets/js/jquery-te-1.4.0.min.js"></script>
-	<script src="/BandCMS/admin/assets/js/verify.notify.min.js"></script>
-	<script type="text/javascript"></script>
-</head>
-<body>
-	<?php 
-		if(isset($_GET['t'])){
-			echo '<div>News added !</div>';
-		}
 
-		if(isset($_GET['id'])){
-			$id = $_GET['id'];
-			require(dirname(__FILE__).'/../../Global/Repository/NewsRepository.php');
-			$newsRepository = new NewsRepository();
-			$news= $newsRepository->getNewsById($id);
+</head>
+	
+<body>
+
+	<?php 
+		error_reporting(E_ALL);
+		echo "ok1";
+		try {
+			require(dirname(__FILE__) . '/../../Global/Repository/SettingsRepository.php');
+
+		}
+		catch(Exception $e){
+			echo 'ERROR : '.$e;
+		} 
+
+		echo "ok2";
+		$settingsRepository = new SettingsRepository();
+		$settings = $settingsRepository->getSettings();
+
+		if(isset($_GET['e'])){
+			echo '<div>Settings saved !</div>';
 		}
 	?>
-	<form method="post" action="../controller/addNewsController.php">
-		<input style="visibility:hidden;display:none;" type="text" name="redirect" value= <?php echo '"http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'"'?> />
-		<?php echo (isset($_GET['id']))? '<input style="visibility:hidden;display:none;" type="text" name="id" value="'.$id.'">': ''; ?>
+	<form method="post" action="../controller/settingsController.php">
+		<input style="visibility:hidden;display:none;" type="text" name="redirect" value= <?php echo '"http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'"'?> >
+
 		<table>
 			<tr>
 				<td>
-					<label>Band name : </label>
+					<label>Site name : </label>
 				</td>			
 				<td>
-					<input type="text" data-validate="required" name="band-name" value=<?php echo (isset($_GET['id']))? '"'.$news->getTitle().'"' : '""';  ?> />
-				</td>		
-			</tr>
-			<tr>
-				<td>
-					<label>Slogan : </label>
-				</td>			
-				<td>
-					<input type="chapo" data-validate="required" name="slogan" value=<?php echo (isset($_GET['id']))? '"'.$news->getChapo().'"' : '""';  ?>/>
+					<input type="text" name="site-name" value=<?php echo $settings->getName(); ?> >
 				</td>		
 			</tr>
 			<tr>	
-				<td>	
-					<label>Description :</label>
-				</td>	
 				<td>
-					<textarea class="editor" data-validate="required" name="text1"><?php echo (isset($_GET['id']))? $news->getTexte() : '';  ?></textarea>
-				</td>	
+					<label>Site slogan : </label>
+				</td>		
+				<td>
+					<input type="text" name="slogan" value=<?php echo $settings->getSlogan(); ?> >
+				</td>		
 			</tr>
 			<tr>
 				<td>
-					<label>Logo :</label>
-				</td>
+					<label>Site logo : </label>
+				</td>		
 				<td>
-					<input type="file" name="fileToUpload" id="fileToUpload" value=<?php echo (isset($_GET['id']))? '"'.$news->getImage().'"' : '""';  ?>>
-					<?php echo (isset($_GET['id']))? '<img src="'.$news->getChapo().'">' : '';  ?>
-				</td>
-
+					<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+					<input type="file" name="logo">
+				</td>		
 			</tr>
+			
 			<tr>
 				<td>
 					
 				</td>
-				<td>
-					<input type="submit" name="action" value=<?php echo (isset($_GET['id']))? 'Edit' : 'Save' ;?>>
-				</td>	
+				<td>		
+					<input type="submit" value="Save">
+				</td>
 			</tr>
 		</table>
+
+
 	</form>
-	<script type="text/javascript">
-		$("textarea").jqte();
-	</script>
+
 </body>
+
