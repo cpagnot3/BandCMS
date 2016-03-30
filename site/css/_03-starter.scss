@@ -122,7 +122,7 @@ nav{
 	float: left;
 	padding-left: $gutter-width/2;
 	padding-right: $gutter-width/2;
-	position: relative;
+
 }
 
 @for $i from 1 through $maximum-columns {

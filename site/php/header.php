@@ -11,9 +11,9 @@
 	</nav>
 
 	<div class="logo">
-		<a href="./img/profil.jpg">
+		<div id="logo-pad">
 			<img src="./img/profil.jpg"/>
-		</a>
+		</div>
 	</div>
 	<div class="lowheader col-lg-12"></div>
 

@@ -56,13 +56,11 @@ nav ul li a:hover {
 article{
 	margin-bottom: 2%;
 	text-align: center;
+	background-color: #dadada;
+	padding-bottom: 5px;
+	margin-bottom: 2px;
 }
-p{
-	background: none !important;
-	width: 100% !important;
-	text-align: justify;
 
-}
 h2{
 	    padding-top: 25px;
 }
@@ -79,16 +77,17 @@ h2{
 	color: #C2C242;
 	font-weight: normal;
 }
-
+#logo-pad{
+	padding-top: 15%;
+}
 .logo img {
-	position: absolute;
-	width: 20%;
-    left: 50%;
-    margin-left: -10%;
-	text-align: center;
-	margin-top: 250px;
-	cursor: pointer;
-	z-index:10;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    z-index: 10;
+    max-width: 20%;
+
 }
 
 .lowheader {
@@ -100,7 +99,7 @@ h2{
 
 #main-content
 {
- margin-top: 40px;
+ margin-top: 2em;
 }
 .news{
 	width:100%;
@@ -116,12 +115,9 @@ h2{
 }
 .social {
 	
-	height: 10%;
+	
 	margin: auto;
-	padding: 0;
 	list-style-type: none;
-	text-align: center;
-
 }
 
 .social img {
@@ -171,9 +167,6 @@ h2{
   
   	padding-top: 1%;
     padding-bottom: 1%;
-}
-#content{
-	margin-bottom: 40px;
 }
 .content {
 	position: relative;

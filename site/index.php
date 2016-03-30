@@ -34,7 +34,7 @@
 	
 <!-- #main-content -->
 	
-	<div id="content">
+	<div>
 		<section id="main-content" class="row">
 			<h1 class="col-lg-12">Ma Bande</h1>
 			<div class="col-lg-4 col-xs-12">
