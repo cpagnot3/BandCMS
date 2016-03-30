@@ -63,7 +63,7 @@
 					<label>File : </label>
 				</td>		
 				<td>
-					<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+					<input type="hidden" name="MAX_FILE_SIZE" value="3000000000" />
 					<input type="file" name="file">
 				</td>		
 			</tr>
