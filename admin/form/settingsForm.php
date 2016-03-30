@@ -8,7 +8,13 @@
 	<?php 
 		error_reporting(E_ALL);
 		echo "ok1";
-		require(dirname(__FILE__) . '/../../Global/Repository/SettingsRepository.php');
+		try {
+			require(dirname(__FILE__) . '/../../Global/Repository/SettingsRepository.php');
+
+		}
+		catch(Exception $e){
+			echo 'ERROR : '.$e;
+		} 
 
 		echo "ok2";
 		$settingsRepository = new SettingsRepository();
