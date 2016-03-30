@@ -21,6 +21,7 @@
 		?>
 	<form method="post" action="../controller/addNewsController.php">
 		<input style="visibility:hidden;display:none;" type="text" name="redirect" value= <?php echo '"http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'"'?> />
+		<input style="visibility:hidden;display:none;" type="text" name="action" value=<?php echo (isset($_GET['id']))? '"Edit"' : '"Add"' ;?> />
 		<?php echo (isset($_GET['id']))? '<input style="visibility:hidden;display:none;" type="text" name="id" value="'.$id.'">': ''; ?>
 		<table>
 			<tr>
@@ -62,7 +63,7 @@
 					
 				</td>
 				<td>
-					<input type="submit" name="action" value=<?php echo (isset($_GET['id']))? 'Edit' : 'Add' ;?>>
+					<input type="submit" value=<?php echo (isset($_GET['id']))? 'Edit' : 'Add' ;?>>
 				</td>	
 			</tr>
 		</table>

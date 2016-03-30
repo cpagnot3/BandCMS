@@ -1,7 +1,6 @@
 <?php 
-
-require(dirname(__FILE__).'/../Object/news.php');
-require(dirname(__FILE__).'/./DataManager.php');
+require_once(dirname(__FILE__).'/../Object/news.php');
+require_once(dirname(__FILE__).'/./DataManager.php');
 
 class NewsRepository extends DataManager
 {
@@ -47,6 +46,24 @@ class NewsRepository extends DataManager
 		return $news;
 
 	}
+
+	public function getAllNews()
+	{
+		$data = $this->getJson();
+		$listNews = array();
+		foreach($data->news as $key => $newsValue){
+			$news = new News();	
+			$news->setId($key);
+			$news->setTitle($newsValue->title);
+			$news->setDate($newsValue->date);
+			$news->setChapo($newsValue->chapo);
+			$news->setImage($newsValue->image);
+			$news->setTexte($newsValue->texte);
+			$listNews[] = $news;
+		}			
+		return $listNews;
+	}
+	
 
 	public function getListNews($limit)
 	{
@@ -98,6 +115,26 @@ class NewsRepository extends DataManager
 		$newJson = $this->setJson($data);
 		return $newJson;	
 	}
+
+	public function getLastNews()
+	{
+		$data = $this->getJson();
+		foreach ($data->news as $key => $value) {
+			$lastNewsId = $key;
+		}
+		
+		$news = new News();	
+		$news->setId($lastNewsId);
+		$news->setTitle($data->news->$lastNewsId->title);
+		$news->setDate($data->news->$lastNewsId->date);
+		$news->setChapo($data->news->$lastNewsId->chapo);
+		$news->setImage($data->news->$lastNewsId->image);
+		$news->setTexte($data->news->$lastNewsId->texte);
+
+		return $news;
+	}
+
+
 }
 
 ?>
