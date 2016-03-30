@@ -1,7 +1,6 @@
 <?php 
-
-require(dirname(__FILE__).'/../Object/news.php');
-require(dirname(__FILE__).'/./DataManager.php');
+require_once(dirname(__FILE__).'/../Object/news.php');
+require_once(dirname(__FILE__).'/./DataManager.php');
 
 class NewsRepository extends DataManager
 {
@@ -98,6 +97,26 @@ class NewsRepository extends DataManager
 		$newJson = $this->setJson($data);
 		return $newJson;	
 	}
+
+	public function getLastNews()
+	{
+		$data = $this->getJson();
+		foreach ($data->news as $key => $value) {
+			$lastNewsId = $key;
+		}
+		
+		$news = new News();	
+		$news->setId($lastNewsId);
+		$news->setTitle($data->news->$lastNewsId->title);
+		$news->setDate($data->news->$lastNewsId->date);
+		$news->setChapo($data->news->$lastNewsId->chapo);
+		$news->setImage($data->news->$lastNewsId->image);
+		$news->setTexte($data->news->$lastNewsId->texte);
+
+		return $news;
+	}
+
+
 }
 
 ?>

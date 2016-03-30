@@ -19,6 +19,7 @@
 			<li><a href="news.php">Edit news</a></li>		
 
 		</ul>
+		<a href="../controller/disconectController.php">Disconnect</a>
 
 
 	</body>

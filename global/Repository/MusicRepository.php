@@ -1,7 +1,7 @@
 <?php
 
-require(dirname(__FILE__).'/../Object/Music.php');
-require(dirname(__FILE__).'/./DataManager.php');
+require_once(dirname(__FILE__).'/../Object/Music.php');
+require_once(dirname(__FILE__).'/./DataManager.php');
 
 class MusicRepository extends DataManager
 {

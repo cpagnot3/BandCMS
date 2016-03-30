@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Title of the document</title>
+	<title>Tour</title>
+	<link rel="stylesheet" type="text/css" href="../test.css">
+	<link rel="stylesheet" type="text/css" href="../css/global.css">
 
 </head>
 
@@ -9,16 +11,22 @@
 <body>
 	<?php
 		require(dirname(__FILE__).'/../../global/Repository/ConcertRepository.php');
-
+		include('header.php');
 	?>
-	<h1>Liste des concerts</h1>	
+	<h1 class="col-lg-12">Liste des concerts</h1>
+	<div id="map" style="height: 500px" class="col-lg-6"></div>	
+	<div class="col-lg-6">
+		<table>
+			
 	<?php
 		$concertRepository = new ConcertRepository();
 		foreach ($concertRepository->getListConcert() as $concert) {
 			echo '<p>'.$concert->getDateConcert().' - '.$concert->getPlace().' - '.$concert->getCity().', 	'.$concert->getCountry().'  - <a href="'.$concert->getBilleterie().'">Billeterie</a></p>';
 		}
 	?>	
-	<div id="map" style="height: 500px;width:50%;"></div>
+		</table>
+	</div>
+	
 
  <script type="text/javascript">
       var map;
