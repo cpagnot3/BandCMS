@@ -7,7 +7,7 @@
 
 	//upload stuff
 	$extensions = array('.png', '.jpg', '.jpeg');
-	$extension = strrchr($_FILES['logo']['name'], '.');
+	$extension = strrchr($_FILES['band-logo']['name'], '.');
 
 	/*
 	if(!in_array($extension, $extensions)) {
@@ -16,10 +16,10 @@
 	*/
 
 	$uploaddir = '/../../global/files/logo/';
-	$uploadfile = $uploaddir . basename($_FILES['logo']['name']);
+	$uploadfile = $uploaddir . basename($_FILES['band-logo']['name']);
 
 	$writable = is_writable($uploadfile);
-	move_uploaded_file($_FILES['logo']['tmp_name'], $uploadfile);
+	move_uploaded_file($_FILES['band-logo']['tmp_name'], $uploadfile);
 	
 
 	try{

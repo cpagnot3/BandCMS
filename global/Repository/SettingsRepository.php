@@ -27,7 +27,8 @@ class SettingsRepository extends DataManager
 
 		$settings = array(
 				'name' 		=> $settingsData->getName(),
-				'slogan'	=> $settingsData->getSlogan()
+				'slogan'	=> $settingsData->getSlogan(),
+				'logo'		=> $settingsData->getLogo()
 				);
 			
 		$data->settings = $settings;			
