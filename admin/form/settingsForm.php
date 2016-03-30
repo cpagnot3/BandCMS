@@ -6,15 +6,7 @@
 <body>
 
 	<?php 
-
-		try {
-			require(dirname(__FILE__) . '/../../Global/Repository/SettingsRepository.php');
-
-		}
-		catch(Exception $e){
-			echo 'ERROR : '.$e;
-		} 
-
+		require(dirname(__FILE__) . '/../../Global/Repository/SettingsRepository.php');
 
 		$settingsRepository = new SettingsRepository();
 		$settings = $settingsRepository->getSettings();
@@ -37,7 +29,7 @@
 			</tr>
 			<tr>	
 				<td>
-					<label>Site slogan : </label>
+					<label>Slogan : </label>
 				</td>		
 				<td>
 					<input type="text" name="slogan" value=<?php echo $settings->getSlogan(); ?> >
@@ -45,11 +37,11 @@
 			</tr>
 			<tr>
 				<td>
-					<label>Site logo : </label>
+					<label>Logo : </label>
 				</td>		
 				<td>
-					<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-					<input type="file" name="band-logo">
+					<input type="hidden" name="MAX_FILE_SIZE" value="300000000" />
+					<input type="file" name="band-logo" >
 				</td>		
 			</tr>
 			

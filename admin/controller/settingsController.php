@@ -14,12 +14,31 @@
 		return "wrong extension";
 	}
 	*/
+	// Paths
+	$uploaddir = '../../global/files/logo/';
+	$uploadfile = $uploaddir . $_FILES['band-logo']['name'];
 
-	$uploaddir = '/../../global/files/logo/';
-	$uploadfile = $uploaddir . basename($_FILES['band-logo']['name']);
+	
+	
+	// creating folder by php
+	if ( !file_exists($uploaddir) ) {
+	    $oldmask = umask(0);
+	    mkdir ($uploaddir, 0744);
+	}
 
-	$writable = is_writable($uploadfile);
-	move_uploaded_file($_FILES['band-logo']['tmp_name'], $uploadfile);
+	/*
+	$realPath = realpath($uploaddir);
+	$writable = is_writable($realPath);
+	$writable2 = is_writable($uploaddir);
+	*/
+
+
+	try{
+		move_uploaded_file($_FILES['band-logo']['tmp_name'], $uploadfile );
+
+	}catch(Exception $e){
+		echo 'ERROR : '.$e;
+	} 
 	
 
 	try{
@@ -31,6 +50,10 @@
 		$settingsRepository = new SettingsRepository();
 
 		$data = $settingsRepository->updateSettings($settings);	
+
+		
+		
+
 		header('Location: '.$redirect.'?e');
 
 	}catch(Exception $e){
