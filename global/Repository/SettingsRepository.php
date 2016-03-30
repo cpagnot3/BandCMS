@@ -1,5 +1,6 @@
 <?php
 
+require(dirname(__FILE__).'/../Object/Settings.php');
 require(dirname(__FILE__).'/./DataManager.php');
 
 class SettingsRepository extends DataManager

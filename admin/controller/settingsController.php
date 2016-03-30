@@ -30,15 +30,17 @@
 	move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile);
 	*/
 
-	$show = new Settings();
-	$show->setName($name);
-	$show->setSlogan($slogan);
+	try{
+		$settings = new Settings();
+		$settings->setName($name);
+		$settings->setSlogan($slogan);
 
-	$settingsRepository = new SettingsRepository();
-	
-	$newSettings = $settingsRepository->updateSettings($show);
-
-	header('Location: '.$redirect.'?a'); 
+		$settingsRepository = new SettingsRepository();		
+		$data = $settingsRepository->editSettings($settings);	
+		header('Location: '.$redirect.'?e');
+	}catch(Exception $e){
+		echo 'ERROR : '.$e;
+	} 
 	/*
 	if($action=='Add'){
 		try{			

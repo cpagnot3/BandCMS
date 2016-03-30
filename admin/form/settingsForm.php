@@ -9,10 +9,12 @@
 <body>
 
 	<?php 
-		require(dirname(__FILE__).'/../../Global/Repository/SettingsRepository.php');
+		require(dirname(__FILE__).'/../../global/Repository/SettingsRepository.php');
 		$settingsRepository = new SettingsRepository();
 		$settings = $settingsRepository->getSettings();
 	?>
+
+
 	<?php 
 		if(isset($_GET['e'])){
 			echo '<div>Settings saved !</div>';
@@ -27,7 +29,7 @@
 					<label>Site name : </label>
 				</td>			
 				<td>
-					<input type="text" name="site-name" value=<?php echo (isset($_GET['id']))? '"'.$settings->getName().'"' : '""';  ?> >
+					<input type="text" name="site-name" value=<?php echo $settings->getName(); ?> >
 				</td>		
 			</tr>
 			<tr>	
@@ -35,7 +37,7 @@
 					<label>Site slogan : </label>
 				</td>		
 				<td>
-					<input type="text" name="slogan" value=<?php echo (isset($_GET['id']))? '"'.$settings->getSlogan().'"' : '""';  ?> >
+					<input type="text" name="slogan" value=<?php echo $settings->getSlogan(); ?> >
 				</td>		
 			</tr>
 			<tr>
@@ -52,7 +54,7 @@
 					
 				</td>
 				<td>		
-					<input type="submit" value="Edit">
+					<input type="submit" value="Save">
 				</td>
 			</tr>
 		</table>
