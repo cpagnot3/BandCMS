@@ -1,6 +1,6 @@
 <?php
 
-require(dirname(__FILE__).'/../Object/Contact.php');
+require_once(dirname(__FILE__).'/../Object/Contact.php');
 require_once(dirname(__FILE__).'/./DataManager.php');
 
 class ContactRepository extends DataManager

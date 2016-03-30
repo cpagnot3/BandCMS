@@ -1,6 +1,5 @@
 <?php 
-
-require(dirname(__FILE__).'/../Object/news.php');
+require_once(dirname(__FILE__).'/../Object/news.php');
 require_once(dirname(__FILE__).'/./DataManager.php');
 
 class NewsRepository extends DataManager

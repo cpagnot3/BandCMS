@@ -37,17 +37,17 @@
 	<div id="content">
 		<section id="main-content" class="row">
 			<h1 class="col-lg-12">Ma Bande</h1>
-			<div class="col-lg-4">
+			<div class="col-lg-4 col-xs-12">
 				<a href="#band.php">
 				<h2>Le groupe</h2>
 				</a>
 			</div>
-			<div class="col-lg-4">
+			<div class="col-lg-4 col-xs-12">
 				<a href="./php/show.php">
 				<h2>prochain concerts</h2>	
 				</a>
 			</div>
-			<div class="col-lg-4">
+			<div class="col-lg-4 col-xs-12">
 				<a href="#galerie.php">
 				<h2>Galerie</h2>
 				</a>
