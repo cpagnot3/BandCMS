@@ -13,6 +13,8 @@
 		require(dirname(__FILE__).'/../../global/Repository/ConcertRepository.php');
 		include('header.php');
 	?>
+	<main class="container">
+	<section id="main-content" class="row">
 	<h1 class="col-lg-12">Liste des concerts</h1>
 	<div id="map" style="height: 480px" class="col-lg-6"></div>	
 	<div id="show" class="col-lg-6">
@@ -26,7 +28,7 @@
 	?>	
 		</table>
 	</div>
-	
+	 </section>
 
  <script type="text/javascript">
       var map;
@@ -54,6 +56,5 @@
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB14nxFsuqDXgA_4s1kFlefkDO4CcFWxM8&callback=initMap"
     async defer></script>
-</body>
-
-</html>
+  
+<?php include('footer.php'); ?> 

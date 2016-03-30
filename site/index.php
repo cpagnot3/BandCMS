@@ -26,9 +26,26 @@
 <!-- .container principal -->
 	<main class="container">
 	<!-- #main header -->
-		<?php include('./php/header.php'); ?> 
+		<header id="main-header" class="row">
+	<nav class="col-lg-12">
+		<ul>
+			<li><a href="./php/contact.php">Contact</a></li>
+			<li><a href="#site/php/Band">Band</a></li>
+			<li><a href="./php/show.php">Concerts</a></li>
+			<li><a href="./php/music.php">Nos Musiques</a></li>
+			<li><a href="./php/news.php">News</a></li>
+			<li><a href="./index.php">Accueil</a></li>
+		</ul>
+	</nav>
 
+	<div class="logo">
+		<div id="logo-pad">
+			<img src="./img/profil.jpg"/>
+		</div>
+	</div>
+	<div class="lowheader col-lg-12"></div>
 
+</header>
 	
 	
 	
@@ -53,8 +70,8 @@
 			</div>
 			<div class="col-lg-4 col-xs-12">
 				<div class="rounded">
-				<a href="#galerie.php">
-				<h2>Galerie</h2>
+				<a href="./php/music.php">
+				<h2>Musiques</h2>
 				</a>
 				</div>
 			</div>
