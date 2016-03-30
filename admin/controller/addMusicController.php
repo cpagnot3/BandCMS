@@ -19,7 +19,7 @@
 
 	//upload staff
 
-	$extensions = array('.mp3', '.wav', '.jpg', '.jpeg');
+	$extensions = array('.mp3', '.wav');
 	$extension = strrchr($_FILES['file']['name'], '.');
 
 	if(!in_array($extension, $extensions)) {
