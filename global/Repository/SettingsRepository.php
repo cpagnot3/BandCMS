@@ -23,7 +23,7 @@ class SettingsRepository extends DataManager
 
 	public function updateSettings($settingsData)
 	{
-		$data = $this->getJson();
+		$data = $this->getSettingsJson();
 
 		$settings = array(
 				'name' 		=> $settingsData->getName(),

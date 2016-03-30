@@ -1,5 +1,5 @@
 <?php 
-	require(dirname(__FILE__).'/../../Global/Repository/MusicRepository.php');
+	require(dirname(__FILE__).'/../../global/Repository/MusicRepository.php');
 
 	$title 		= $_POST['title'];
 	$artist 	= $_POST['artist'];
@@ -22,9 +22,14 @@
 	$extensions = array('.mp3', '.wav');
 	$extension = strrchr($_FILES['file']['name'], '.');
 
+	echo "ma bite";
+
 	if(!in_array($extension, $extensions)) {
-		return "wrong extension";
+		echo "wrong extension";
+		return;
 	}
+
+	echo "ma bite2";
 
 	$uploaddir = '/../../global/files/music/';
 	$uploadfile = $uploaddir . basename($_FILES['file']['name']);
@@ -32,6 +37,7 @@
 	$writable = is_writable($uploadfile);
 	move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile);
 
+	echo "ma bite3";
 
 	$show = new Music();
 	$show->setTitle($title);
@@ -41,10 +47,11 @@
 	$show->setPath($uploadfile);
 
 
-
 	$musicRepository = new MusicRepository();
 	if($action=='Add'){
-		try{			
+		try{
+
+			echo "ma bite6666";			
 			$newShow = $musicRepository->addMusic($show);
 			echo "writable dir ?";
 			var_dump($writable);
@@ -62,5 +69,7 @@
 			echo 'ERROR : '.$e;
 		}
 	}
+
+	echo "ma bite4";
 
 ?>

@@ -1,21 +1,19 @@
 <head>
-	<link rel="stylesheet" type="text/css" href="/BandCMS/admin/assets/css/jquery.datetimepicker.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-	<script src="/BandCMS/admin/assets/js/jquery.datetimepicker.full.js"></script>
-	<script src="/BandCMS/admin/assets/js/jquery.datetimepicker.js"></script>
+
 
 </head>
 	
 <body>
 
 	<?php 
-		require(dirname(__FILE__).'/../../global/Repository/SettingsRepository.php');
+		error_reporting(E_ALL);
+		echo "ok1";
+		require(dirname(__FILE__) . '/../../Global/Repository/SettingsRepository.php');
+
+		echo "ok2";
 		$settingsRepository = new SettingsRepository();
 		$settings = $settingsRepository->getSettings();
-	?>
 
-
-	<?php 
 		if(isset($_GET['e'])){
 			echo '<div>Settings saved !</div>';
 		}
